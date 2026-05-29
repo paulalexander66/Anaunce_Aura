@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Traumwohnung Leopoldsdorf – Privatverkauf</title>
-    <meta name="description" content="Wohnen wie im Urlaub – exklusive Dachgeschosswohnung direkt am Badesee in der Aura Siedlung Leopoldsdorf. 4 Zimmer, 95m², Dachterrasse, Privatverkauf ohne Provision.">
+    <title>Traumwohnung Leopoldsdorf &ndash; Privatverkauf</title>
+    <meta name="description" content="Wohnen wie im Urlaub &ndash; exklusive Dachgeschosswohnung direkt am Badesee in der Aura Siedlung Leopoldsdorf. 4 Zimmer, 95m2, Dachterrasse, Privatverkauf ohne Provision.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -20,31 +20,25 @@
             --white: #ffffff;
             --border: #e0d8cc;
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior:smooth; }
+        body { font-family:'Inter',sans-serif; color:var(--text); background:var(--white); }
 
         /* NAV */
-        nav {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-            background: rgba(26,58,74,0.97);
-            backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-        .nav-logo { font-family: 'Playfair Display', serif; color: var(--accent); font-size: 1.1rem; font-weight: 700; letter-spacing: 0.03em; }
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 0.88rem; font-weight: 500; letter-spacing: 0.04em; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--accent); }
-        .nav-badge { background: var(--accent); color: var(--primary); padding: 0.4rem 1rem; border-radius: 2rem; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+        nav { position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(26,58,74,0.97); backdrop-filter:blur(10px); padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; }
+        .nav-logo { font-family:'Playfair Display',serif; color:var(--accent); font-size:1.1rem; font-weight:700; }
+        .nav-links { display:flex; gap:2rem; list-style:none; }
+        .nav-links a { color:rgba(255,255,255,0.85); text-decoration:none; font-size:0.88rem; font-weight:500; transition:color 0.3s; }
+        .nav-links a:hover { color:var(--accent); }
+        .nav-badge { background:var(--accent); color:var(--primary); padding:0.4rem 1rem; border-radius:2rem; font-size:0.78rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; }
         @media(max-width:768px){ .nav-links{display:none;} nav{padding:1rem 1.2rem;} }
 
         /* HERO */
-        .hero { height: 100vh; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
-        .hero-img-wrap { position: absolute; inset: 0; }
+        .hero { height:100vh; position:relative; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+        .hero-img-wrap { position:absolute; inset:0; }
         .hero-img-wrap img { width:100%; height:100%; object-fit:cover; }
-        .hero-img-fallback { position:absolute; inset:0; background: linear-gradient(135deg,#1a3a4a 0%,#2d6a8a 60%,#1a4a3a 100%); }
-        .hero-overlay { position:absolute; inset:0; background: linear-gradient(to bottom, rgba(26,58,74,0.25) 0%, rgba(26,58,74,0.72) 100%); }
+        .hero-img-fallback { position:absolute; inset:0; background:linear-gradient(135deg,#1a3a4a 0%,#2d6a8a 60%,#1a4a3a 100%); z-index:-1; }
+        .hero-overlay { position:absolute; inset:0; background:linear-gradient(to bottom,rgba(26,58,74,0.25) 0%,rgba(26,58,74,0.72) 100%); }
         .hero-content { position:relative; z-index:2; text-align:center; color:white; padding:2rem; max-width:920px; }
         .hero-badge { display:inline-flex; align-items:center; gap:0.5rem; background:var(--accent); color:var(--primary); padding:0.5rem 1.5rem; border-radius:2rem; font-size:0.82rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:1.5rem; }
         .hero h1 { font-family:'Playfair Display',serif; font-size:clamp(2.4rem,6vw,4.5rem); line-height:1.15; margin-bottom:1rem; text-shadow:0 2px 20px rgba(0,0,0,0.3); }
@@ -74,16 +68,27 @@
         .section-title { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,4vw,2.8rem); color:var(--primary); margin-bottom:1.5rem; line-height:1.2; }
         .section-text { color:var(--text-light); line-height:1.85; font-size:1.03rem; max-width:640px; }
 
+        /* SLIDER */
+        .slider { position:relative; overflow:hidden; border-radius:1.5rem; }
+        .slider-track { display:flex; transition:transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94); height:100%; }
+        .slider-slide { min-width:100%; height:100%; flex-shrink:0; }
+        .slider-slide img { width:100%; height:100%; object-fit:cover; display:block; }
+        .slider-btn { position:absolute; top:50%; transform:translateY(-50%); background:rgba(26,58,74,0.65); border:none; color:white; width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all 0.3s; z-index:5; backdrop-filter:blur(4px); }
+        .slider-btn:hover { background:var(--accent); color:var(--primary); }
+        .slider-btn.prev { left:1rem; }
+        .slider-btn.next { right:1rem; }
+        .slider-btn svg { width:18px; height:18px; }
+        .slider-dots { position:absolute; bottom:1rem; left:50%; transform:translateX(-50%); display:flex; gap:0.5rem; z-index:5; }
+        .slider-dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.5); border:none; cursor:pointer; transition:all 0.3s; padding:0; }
+        .slider-dot.active { background:var(--accent); transform:scale(1.3); }
+
         /* BADESEE */
         .badesee-section { background:var(--bg-light); }
         .badesee-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
         @media(max-width:768px){ .badesee-grid{grid-template-columns:1fr; gap:2rem;} }
-        .badesee-visual { position:relative; }
-        .img-placeholder { border-radius:1.5rem; overflow:hidden; position:relative; background:linear-gradient(135deg,#c8e6f0,#a8d8e8); }
-        .img-placeholder img { width:100%; height:100%; object-fit:cover; display:block; }
         .img-main { height:420px; }
         .badge-floating { position:absolute; background:var(--primary); color:white; padding:1rem 1.5rem; border-radius:1rem; box-shadow:0 10px 30px rgba(0,0,0,0.2); }
-        .badge-floating.top-right { top:-1rem; right:-1rem; }
+        .badge-floating.top-right { top:-1rem; right:-1rem; z-index:6; }
         .badge-floating .bf-value { font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--accent); }
         .badge-floating .bf-label { font-size:0.72rem; opacity:0.8; margin-top:0.2rem; }
         .highlight-list { list-style:none; margin-top:1.5rem; }
@@ -102,14 +107,11 @@
         .fakt-value { font-family:'Playfair Display',serif; font-size:1.9rem; color:var(--accent); margin-bottom:0.3rem; }
         .fakt-label { font-size:0.8rem; opacity:0.7; }
 
-        /* RÄUME */
-        .raume-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:2rem; margin-top:3rem; }
+        /* RAUME */
+        .raume-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:2rem; margin-top:3rem; }
         .raum-card { background:var(--bg-light); border-radius:1.5rem; overflow:hidden; transition:all 0.3s; border:1px solid var(--border); }
         .raum-card:hover { transform:translateY(-5px); box-shadow:0 20px 40px rgba(0,0,0,0.1); }
-        .raum-img { height:220px; }
-        .raum-img-inner { width:100%; height:100%; background:linear-gradient(135deg,#c8d8e0,#d8c8b0); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.8); flex-direction:column; gap:0.6rem; font-size:0.85rem; }
-        .raum-img-inner svg { width:40px; height:40px; opacity:0.7; }
-        .raum-img img { width:100%; height:100%; object-fit:cover; display:block; }
+        .raum-slider { height:260px; }
         .raum-body { padding:1.5rem; }
         .raum-title { font-family:'Playfair Display',serif; font-size:1.25rem; color:var(--primary); margin-bottom:0.7rem; }
         .raum-text { color:var(--text-light); line-height:1.7; font-size:0.93rem; }
@@ -118,11 +120,8 @@
 
         /* DACHTERRASSE */
         .dachterrasse-section { background:var(--bg-light); }
-        .dt-hero { height:480px; border-radius:2rem; overflow:hidden; position:relative; margin-bottom:3rem; }
-        .dt-hero-inner { width:100%; height:100%; background:linear-gradient(135deg,#8ab8c8 0%,#c8d8b0 100%); display:flex; align-items:center; justify-content:center; color:white; flex-direction:column; gap:0.75rem; font-size:1rem; }
-        .dt-hero-inner svg { width:56px; height:56px; opacity:0.6; }
-        .dt-hero img { width:100%; height:100%; object-fit:cover; }
-        .dt-hero-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(26,58,74,0.82) 0%,transparent 55%); display:flex; align-items:flex-end; padding:2.5rem; pointer-events:none; }
+        .dt-hero { height:520px; border-radius:2rem; overflow:hidden; position:relative; margin-bottom:3rem; }
+        .dt-hero-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(26,58,74,0.82) 0%,transparent 55%); display:flex; align-items:flex-end; padding:2.5rem; pointer-events:none; z-index:4; }
         .dt-hero-text { color:white; }
         .dt-hero-text h3 { font-family:'Playfair Display',serif; font-size:2rem; margin-bottom:0.4rem; }
         .dt-hero-text p { opacity:0.85; }
@@ -133,6 +132,12 @@
         .dt-feature-icon svg { width:24px; height:24px; }
         .dt-feature h4 { color:var(--primary); margin-bottom:0.35rem; font-size:0.97rem; font-weight:600; }
         .dt-feature p { color:var(--text-light); font-size:0.88rem; line-height:1.55; }
+
+        /* OUTDOOR KUECHE */
+        .outdoor-section { background:white; }
+        .outdoor-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; margin-top:2rem; }
+        @media(max-width:768px){ .outdoor-grid{grid-template-columns:1fr; gap:2rem;} }
+        .outdoor-slider { height:380px; }
 
         /* AUSSTATTUNG */
         .ausstattung-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.2rem; margin-top:3rem; }
@@ -169,21 +174,11 @@
         .energie-card h4 { color:var(--primary); margin-bottom:0.5rem; font-size:0.97rem; }
         .energie-card p { color:var(--text-light); font-size:0.87rem; line-height:1.55; }
 
-        /* GALERIE */
-        .galerie-section { background:white; }
-        .galerie-grid { display:grid; grid-template-columns:2fr 1fr 1fr; grid-template-rows:250px 250px; gap:0.9rem; margin-top:3rem; }
-        @media(max-width:768px){ .galerie-grid{grid-template-columns:1fr 1fr; grid-template-rows:auto;} .galerie-item.span-col{grid-row:span 1;} }
-        .galerie-item { border-radius:1rem; overflow:hidden; background:linear-gradient(135deg,#c8d8e0,#d8c8b0); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,0.75); font-size:0.82rem; flex-direction:column; gap:0.5rem; transition:opacity 0.3s; cursor:pointer; }
-        .galerie-item:hover { opacity:0.88; }
-        .galerie-item svg { width:36px; height:36px; opacity:0.55; }
-        .galerie-item img { width:100%; height:100%; object-fit:cover; }
-        .galerie-item.span-col { grid-row:span 2; }
-
         /* PREIS */
         .preis-section { background:linear-gradient(135deg,var(--primary) 0%,#2d6a8a 100%); color:white; text-align:center; padding:5rem 2rem; }
         .preis-section .section-title { color:white; }
         .preis-box { display:inline-block; background:rgba(255,255,255,0.06); border:2px solid var(--accent); border-radius:2rem; padding:3rem 5rem; margin:2rem 0 1.5rem; }
-        @media(max-width:768px){ .preis-box{padding:2rem 2rem;} }
+        @media(max-width:768px){ .preis-box{padding:2rem;} }
         .preis-value { font-family:'Playfair Display',serif; font-size:clamp(3rem,8vw,5rem); color:var(--accent); }
         .preis-label { font-size:1.05rem; opacity:0.82; margin-top:0.5rem; }
         .preis-note { background:rgba(200,169,110,0.14); border:1px solid rgba(200,169,110,0.3); border-radius:1rem; padding:1.1rem 2rem; display:inline-flex; align-items:center; gap:0.75rem; margin-top:0.5rem; font-size:0.93rem; color:var(--accent-light); }
@@ -194,8 +189,6 @@
         .kontakt-section { padding:5rem 2rem; }
         .kontakt-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
         @media(max-width:768px){ .kontakt-grid{grid-template-columns:1fr; gap:2.5rem;} }
-        .kontakt-info h3 { font-family:'Playfair Display',serif; font-size:1.8rem; color:var(--primary); margin-bottom:1rem; }
-        .kontakt-info p { color:var(--text-light); line-height:1.8; margin-bottom:2rem; font-size:1rem; }
         .kontakt-detail { display:flex; align-items:center; gap:1rem; padding:0.9rem 0; border-bottom:1px solid var(--border); font-size:0.93rem; }
         .kd-icon { background:var(--bg-light); width:44px; height:44px; min-width:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--accent); }
         .kd-icon svg { width:18px; height:18px; }
@@ -210,9 +203,9 @@
         .call-box { background:var(--bg-light); border:1px solid var(--border); border-radius:2rem; padding:3rem 2.5rem; text-align:center; }
         .call-box h3 { font-family:'Playfair Display',serif; font-size:1.6rem; color:var(--primary); margin-bottom:0.75rem; }
         .call-box p { color:var(--text-light); margin-bottom:2rem; font-size:0.97rem; line-height:1.6; }
-        .call-number { font-family:'Playfair Display',serif; font-size:1.6rem; color:var(--primary); margin-bottom:2rem; display:block; font-weight:700; }
+        .call-number { font-family:'Playfair Display',serif; font-size:1.6rem; color:var(--primary); margin-bottom:2rem; display:block; font-weight:700; text-decoration:none; }
         .btn-call { display:inline-flex; align-items:center; gap:0.75rem; background:var(--primary); color:white; padding:1.2rem 3rem; border-radius:3rem; font-weight:700; text-decoration:none; font-size:1.05rem; transition:all 0.3s; box-shadow:0 6px 24px rgba(26,58,74,0.25); }
-        .btn-call:hover { background:var(--accent); color:var(--primary); transform:translateY(-2px); box-shadow:0 8px 28px rgba(200,169,110,0.4); }
+        .btn-call:hover { background:var(--accent); color:var(--primary); transform:translateY(-2px); }
         .btn-call svg { width:22px; height:22px; }
         .call-note { color:var(--text-light); font-size:0.82rem; margin-top:1.2rem; }
 
@@ -222,8 +215,8 @@
         .footer-phone:hover { color:var(--accent-light); }
         .footer-phone svg { width:18px; height:18px; }
 
-        /* SCROLL REVEAL */
-        .reveal { opacity:0; transform:translateY(24px); transition:opacity 0.6s ease, transform 0.6s ease; }
+        /* REVEAL */
+        .reveal { opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease; }
         .reveal.visible { opacity:1; transform:translateY(0); }
     </style>
 </head>
@@ -241,37 +234,21 @@
     <span class="nav-badge">Privatverkauf</span>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
     <div class="hero-img-wrap">
         <div class="hero-img-fallback"></div>
-        <img src="images/hero.jpg" alt="Dachterrasse Traumwohnung" onerror="this.style.display='none'">
+        <img src="images/hero.jpg" alt="Traumwohnung Leopoldsdorf">
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-        <div class="hero-badge">
-            <i data-lucide="waves" style="width:16px;height:16px;"></i>
-            Wohnen wie im Urlaub &ndash; Direkter Badeseezugang
-        </div>
+        <div class="hero-badge"><i data-lucide="waves" style="width:16px;height:16px;"></i> Wohnen wie im Urlaub &ndash; Direkter Badeseezugang</div>
         <h1>Ihr <span>Traumzuhause</span><br>direkt am See</h1>
         <p class="hero-sub">Exklusive Dachgeschosswohnung mit 4 Zimmern, zwei Terrassen &amp; spektakul&auml;rem Ausblick<br>in der <strong>Aura Siedlung Leopoldsdorf</strong> &ndash; Privatverkauf, keine Maklerprovision</p>
         <div class="hero-stats">
-            <div class="hero-stat">
-                <div class="hero-stat-value">&euro;&thinsp;585.000</div>
-                <div class="hero-stat-label">Kaufpreis</div>
-            </div>
-            <div class="hero-stat">
-                <div class="hero-stat-value">95 m&sup2;</div>
-                <div class="hero-stat-label">Wohnfl&auml;che</div>
-            </div>
-            <div class="hero-stat">
-                <div class="hero-stat-value">4</div>
-                <div class="hero-stat-label">Zimmer</div>
-            </div>
-            <div class="hero-stat">
-                <div class="hero-stat-value">2</div>
-                <div class="hero-stat-label">Terrassen</div>
-            </div>
+            <div class="hero-stat"><div class="hero-stat-value">&euro;&thinsp;585.000</div><div class="hero-stat-label">Kaufpreis</div></div>
+            <div class="hero-stat"><div class="hero-stat-value">95 m&sup2;</div><div class="hero-stat-label">Wohnfl&auml;che</div></div>
+            <div class="hero-stat"><div class="hero-stat-value">4</div><div class="hero-stat-label">Zimmer</div></div>
+            <div class="hero-stat"><div class="hero-stat-value">2</div><div class="hero-stat-label">Terrassen</div></div>
         </div>
         <div class="hero-cta">
             <a href="#kontakt" class="btn-primary"><i data-lucide="phone" style="width:18px;height:18px;"></i> Besichtigung anfragen</a>
@@ -281,7 +258,6 @@
     <div class="scroll-down"><i data-lucide="chevrons-down" style="width:28px;height:28px;"></i></div>
 </section>
 
-<!-- PRIVATVERKAUF BANNER -->
 <div class="priv-banner">
     <i data-lucide="badge-check" style="width:20px;height:20px;"></i>
     <strong>Kein Makler &ndash; Kein Aufschlag:</strong>&nbsp;Sie kaufen direkt vom Eigent&uuml;mer und sparen die gesamte Maklerprovision!
@@ -291,14 +267,13 @@
 <section class="badesee-section" id="badesee">
     <div class="container">
         <div class="badesee-grid">
-            <div class="badesee-visual reveal">
-                <div class="img-placeholder img-main">
-                    <img src="images/badesee.jpg" alt="Badesee" onerror="this.style.display='none'"/>
+            <div style="position:relative" class="reveal">
+                <div class="slider img-main">
+                    <div class="slider-track" id="badesee-track">
+                        <div class="slider-slide"><img src="images/badesee.jpg" alt="Badesee"></div>
+                    </div>
                 </div>
-                <div class="badge-floating top-right">
-                    <div class="bf-value">Exklusiv</div>
-                    <div class="bf-label">Nur f&uuml;r Bewohner</div>
-                </div>
+                <div class="badge-floating top-right"><div class="bf-value">Exklusiv</div><div class="bf-label">Nur f&uuml;r Bewohner</div></div>
             </div>
             <div class="reveal">
                 <span class="section-label">Das besondere Highlight</span>
@@ -333,34 +308,78 @@
     </div>
 </section>
 
-<!-- RÄUME -->
+<!-- RAUME -->
 <section id="raume">
     <div class="container">
         <span class="section-label">Raumaufteilung</span>
         <h2 class="section-title">Gro&szlig;z&uuml;gig auf<br>zwei Ebenen</h2>
         <div class="raume-grid">
+
             <div class="raum-card reveal">
-                <div class="raum-img"><div class="raum-img-inner"><i data-lucide="sofa"></i><span>Foto: Wohn- &amp; Essbereich</span></div></div>
+                <div class="slider raum-slider" data-slider="wohnbereich">
+                    <div class="slider-track" id="wohnbereich-track">
+                        <div class="slider-slide"><img src="images/wohnbereich_1.jpg" alt="Wohnbereich"></div>
+                        <div class="slider-slide"><img src="images/wohnbereich_2.jpg" alt="Wohnbereich 2"></div>
+                    </div>
+                    <button class="slider-btn prev" onclick="slideMove('wohnbereich',-1)"><i data-lucide="chevron-left"></i></button>
+                    <button class="slider-btn next" onclick="slideMove('wohnbereich',1)"><i data-lucide="chevron-right"></i></button>
+                    <div class="slider-dots" id="wohnbereich-dots"></div>
+                </div>
                 <div class="raum-body">
                     <h3 class="raum-title">Wohn- &amp; Essbereich</h3>
                     <p class="raum-text">Gro&szlig;z&uuml;giger, lichtdurchfluteter Wohn- und Essbereich mit angeschlossener Einbauk&uuml;che und direktem Zugang zur gem&uuml;tlichen Terrasse.</p>
                     <div class="raum-tags"><span class="tag">Parkettboden</span><span class="tag">Einbauk&uuml;che</span><span class="tag">Terrassenzugang</span></div>
                 </div>
             </div>
+
             <div class="raum-card reveal">
-                <div class="raum-img"><div class="raum-img-inner"><i data-lucide="bed-double"></i><span>Foto: Schlafzimmer</span></div></div>
+                <div class="slider raum-slider" data-slider="schlafzimmer">
+                    <div class="slider-track" id="schlafzimmer-track">
+                        <div class="slider-slide"><img src="images/schlafzimmer_1.jpg" alt="Schlafzimmer 1"></div>
+                        <div class="slider-slide"><img src="images/schlafzimmer_2.jpg" alt="Schlafzimmer Master"></div>
+                        <div class="slider-slide"><img src="images/schlafzimmer_3.jpg" alt="Schlafzimmer 3"></div>
+                    </div>
+                    <button class="slider-btn prev" onclick="slideMove('schlafzimmer',-1)"><i data-lucide="chevron-left"></i></button>
+                    <button class="slider-btn next" onclick="slideMove('schlafzimmer',1)"><i data-lucide="chevron-right"></i></button>
+                    <div class="slider-dots" id="schlafzimmer-dots"></div>
+                </div>
                 <div class="raum-body">
                     <h3 class="raum-title">3 Schlafzimmer</h3>
-                    <p class="raum-text">Drei gro&szlig;z&uuml;gige Schlafzimmer verteilt auf zwei Ebenen &ndash; ideal f&uuml;r Familien oder als kombiniertes Wohn-Arbeitszimmer Konzept.</p>
+                    <p class="raum-text">Drei gro&szlig;z&uuml;gige Schlafzimmer verteilt auf zwei Ebenen &ndash; darunter ein elegantes Master-Schlafzimmer. Ideal f&uuml;r Familien.</p>
                     <div class="raum-tags"><span class="tag">Parkettboden</span><span class="tag">Klimatisiert</span></div>
                 </div>
             </div>
+
             <div class="raum-card reveal">
-                <div class="raum-img"><div class="raum-img-inner"><i data-lucide="bath"></i><span>Foto: Badezimmer</span></div></div>
+                <div class="slider raum-slider" data-slider="bad">
+                    <div class="slider-track" id="bad-track">
+                        <div class="slider-slide"><img src="images/bad_1.jpg" alt="Badezimmer 1"></div>
+                        <div class="slider-slide"><img src="images/bad_2.jpg" alt="Badezimmer 2"></div>
+                    </div>
+                    <button class="slider-btn prev" onclick="slideMove('bad',-1)"><i data-lucide="chevron-left"></i></button>
+                    <button class="slider-btn next" onclick="slideMove('bad',1)"><i data-lucide="chevron-right"></i></button>
+                    <div class="slider-dots" id="bad-dots"></div>
+                </div>
                 <div class="raum-body">
-                    <h3 class="raum-title">2 Badezimmer</h3>
-                    <p class="raum-text">Zwei hochwertige Badezimmer: eines mit Badewanne und separatem WC, das zweite mit Dusche und Toilette im Obergeschoss.</p>
-                    <div class="raum-tags"><span class="tag">Badewanne</span><span class="tag">Dusche</span><span class="tag">Fliesen</span></div>
+                    <h3 class="raum-title">2 Badezimmer &amp; 2 WC</h3>
+                    <p class="raum-text">Zwei hochwertige Badezimmer: eines mit Badewanne im Eingangsgeschoss, das zweite mit Dusche im Obergeschoss. Auf beiden Etagen befindet sich ein separates WC.</p>
+                    <div class="raum-tags"><span class="tag">Badewanne</span><span class="tag">Dusche</span><span class="tag">Fliesen</span><span class="tag">WC auf beiden Ebenen</span></div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Terrasse Unten -->
+        <div style="margin-top:2rem" class="reveal">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;background:var(--bg-light);border-radius:1.5rem;overflow:hidden;border:1px solid var(--border);">
+                <div style="height:300px;overflow:hidden;">
+                    <img src="images/terrasse_unten.jpg" alt="Terrasse Eingangsebene" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <div style="padding:2rem;">
+                    <span class="section-label">Eingangsebene</span>
+                    <h3 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--primary);margin-bottom:0.75rem;">Gem&uuml;tliche Terrasse &ndash; Eingangsebene</h3>
+                    <p style="color:var(--text-light);line-height:1.7;font-size:0.95rem;">Die Terrasse der Eingangsebene bietet einen sch&ouml;nen R&uuml;ckzugsort direkt vom Wohnbereich aus. &Uuml;ber eine interne Treppe gelangt man zur imposanten Dachterrasse.</p>
+                    <div class="raum-tags" style="margin-top:1rem;"><span class="tag">Direktzugang</span><span class="tag">2 Ebenen</span></div>
                 </div>
             </div>
         </div>
@@ -373,7 +392,16 @@
         <span class="section-label">Das Highlight</span>
         <h2 class="section-title">Die Dachterrasse &ndash;<br>Ihr privates Paradies</h2>
         <div class="dt-hero reveal">
-            <div class="dt-hero-inner"><i data-lucide="mountain-snow"></i><span style="color:rgba(255,255,255,0.75)">Foto: Dachterrasse mit Panoramablick</span></div>
+            <div class="slider" style="height:520px;border-radius:2rem;overflow:hidden;" data-slider="dachterrasse">
+                <div class="slider-track" id="dachterrasse-track">
+                    <div class="slider-slide"><img src="images/dachterrasse_1.jpg" alt="Dachterrasse 1"></div>
+                    <div class="slider-slide"><img src="images/dachterrasse_2.jpg" alt="Dachterrasse 2"></div>
+                    <div class="slider-slide"><img src="images/dachterrasse_3.jpg" alt="Dachterrasse 3"></div>
+                </div>
+                <button class="slider-btn prev" onclick="slideMove('dachterrasse',-1)"><i data-lucide="chevron-left"></i></button>
+                <button class="slider-btn next" onclick="slideMove('dachterrasse',1)"><i data-lucide="chevron-right"></i></button>
+                <div class="slider-dots" id="dachterrasse-dots"></div>
+            </div>
             <div class="dt-hero-overlay">
                 <div class="dt-hero-text">
                     <h3>Privater Himmel &uuml;ber Leopoldsdorf</h3>
@@ -392,8 +420,38 @@
     </div>
 </section>
 
+<!-- OUTDOOR KUECHE -->
+<section class="outdoor-section">
+    <div class="container">
+        <div class="outdoor-grid">
+            <div class="reveal">
+                <span class="section-label">Kulinarisches Highlight</span>
+                <h2 class="section-title">Die Outdoork&uuml;che &ndash;<br>Kochen unter freiem Himmel</h2>
+                <p class="section-text">Die hochwertig ausgestattete Outdoork&uuml;che macht die Dachterrasse zum perfekten Ort f&uuml;r gesellige Abende. Mit Napoleon Gasgrill, Santos BBQ Cart und allem was das Herz begehrt.</p>
+                <ul class="highlight-list" style="margin-top:1.5rem">
+                    <li><div class="hl-icon"><i data-lucide="flame" style="width:14px;height:14px;"></i></div><span><strong>Napoleon Gasgrill</strong> &amp; Santos BBQ Cart</span></li>
+                    <li><div class="hl-icon"><i data-lucide="droplets" style="width:14px;height:14px;"></i></div><span><strong>Au&szlig;endusche</strong> direkt auf der Terrasse</span></li>
+                    <li><div class="hl-icon"><i data-lucide="umbrella" style="width:14px;height:14px;"></i></div><span>Elektrische Rollll&auml;den als <strong>Sonnen- &amp; Windschutz</strong></span></li>
+                </ul>
+            </div>
+            <div class="reveal">
+                <div class="slider outdoor-slider" data-slider="ausskueche">
+                    <div class="slider-track" id="ausskueche-track">
+                        <div class="slider-slide"><img src="images/ausskueche_1.jpg" alt="Outdoorkueche 1"></div>
+                        <div class="slider-slide"><img src="images/ausskueche_2.jpg" alt="Outdoorkueche 2"></div>
+                        <div class="slider-slide"><img src="images/ausskueche_3.jpg" alt="Outdoorkueche 3"></div>
+                    </div>
+                    <button class="slider-btn prev" onclick="slideMove('ausskueche',-1)"><i data-lucide="chevron-left"></i></button>
+                    <button class="slider-btn next" onclick="slideMove('ausskueche',1)"><i data-lucide="chevron-right"></i></button>
+                    <div class="slider-dots" id="ausskueche-dots"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- AUSSTATTUNG -->
-<section id="ausstattung">
+<section id="ausstattung" style="background:var(--bg-light)">
     <div class="container">
         <span class="section-label">Premium Qualit&auml;t</span>
         <h2 class="section-title">Hochwertige Ausstattung<br>in jedem Detail</h2>
@@ -407,25 +465,10 @@
             <div class="ausstattung-item reveal"><div class="ai-icon"><i data-lucide="utensils"></i></div><span>K&uuml;ppersbusch / Bosch / Siemens</span></div>
             <div class="ausstattung-item reveal"><div class="ai-icon"><i data-lucide="layers"></i></div><span>Parkett in allen Wohnr&auml;umen</span></div>
             <div class="ausstattung-item reveal"><div class="ai-icon"><i data-lucide="bath"></i></div><span>Badewanne &amp; separate Dusche</span></div>
+            <div class="ausstattung-item reveal"><div class="ai-icon"><i data-lucide="toilet"></i></div><span>Separates WC auf beiden Etagen</span></div>
             <div class="ausstattung-item reveal"><div class="ai-icon"><i data-lucide="zap"></i></div><span>Photovoltaik + 7kWh Speicher</span></div>
             <div class="ausstattung-item reveal"><div class="ai-icon"><i data-lucide="thermometer"></i></div><span>Fernw&auml;rme Heizung</span></div>
-            <div class="ausstattung-item reveal"><div class="ai-icon"><i data-lucide="armchair"></i></div><span>M&ouml;bliert / Teilm&ouml;bliert</span></div>
             <div class="ausstattung-item reveal"><div class="ai-icon"><i data-lucide="shield-check"></i></div><span>Gepflegter Erstbezug 2004</span></div>
-        </div>
-    </div>
-</section>
-
-<!-- GALERIE -->
-<section class="galerie-section" id="galerie">
-    <div class="container">
-        <span class="section-label">Bildergalerie</span>
-        <h2 class="section-title">Einblicke in Ihr<br>neues Zuhause</h2>
-        <div class="galerie-grid">
-            <div class="galerie-item span-col"><i data-lucide="image"></i><span>Hauptfoto &ndash; Dachterrasse</span></div>
-            <div class="galerie-item"><i data-lucide="sofa"></i><span>Wohnbereich</span></div>
-            <div class="galerie-item"><i data-lucide="utensils"></i><span>K&uuml;che</span></div>
-            <div class="galerie-item"><i data-lucide="bed-double"></i><span>Schlafzimmer</span></div>
-            <div class="galerie-item"><i data-lucide="waves"></i><span>Badesee</span></div>
         </div>
     </div>
 </section>
@@ -481,9 +524,7 @@
             <div class="preis-value">&euro; 585.000</div>
             <div class="preis-label">Kaufpreis inkl. vollst&auml;ndiger Ausstattung</div>
         </div>
-        <div>
-            <div class="preis-note"><i data-lucide="badge-check"></i>Privatverkauf &ndash; <strong>Keine Maklerprovision</strong> &ndash; Sie sparen bis zu &euro; 21.960!</div>
-        </div>
+        <div><div class="preis-note"><i data-lucide="badge-check"></i>Privatverkauf &ndash; <strong>Keine Maklerprovision</strong> &ndash; Sie sparen bis zu &euro; 21.960!</div></div>
         <p class="preis-sub">Betriebskosten: &euro; 483,38 / Monat inkl. USt</p>
     </div>
 </section>
@@ -495,21 +536,10 @@
             <div>
                 <span class="section-label">Interesse?</span>
                 <h2 class="section-title">Kontaktieren Sie<br>uns direkt</h2>
-                <div class="kontakt-info">
-                    <p>Vereinbaren Sie jetzt Ihren unverbindlichen Besichtigungstermin. Wir freuen uns auf Ihren Anruf!</p>
-                    <div class="kontakt-detail">
-                        <div class="kd-icon"><i data-lucide="map-pin"></i></div>
-                        <div><div class="kd-label">Adresse</div><div class="kd-value">Aura Siedlung, 2333 Leopoldsdorf</div></div>
-                    </div>
-                    <div class="kontakt-detail">
-                        <div class="kd-icon"><i data-lucide="home"></i></div>
-                        <div><div class="kd-label">Objekt</div><div class="kd-value">Dachgeschosswohnung, Erstbezug 2004</div></div>
-                    </div>
-                    <div class="kontakt-detail">
-                        <div class="kd-icon"><i data-lucide="tag"></i></div>
-                        <div><div class="kd-label">Verkauf</div><div class="kd-value">Privatverkauf &ndash; ohne Maklerprovision</div></div>
-                    </div>
-                </div>
+                <p style="color:var(--text-light);line-height:1.8;margin-bottom:2rem;font-size:1rem;">Vereinbaren Sie jetzt Ihren unverbindlichen Besichtigungstermin. Wir freuen uns auf Ihren Anruf!</p>
+                <div class="kontakt-detail"><div class="kd-icon"><i data-lucide="map-pin"></i></div><div><div class="kd-label">Adresse</div><div class="kd-value">Aura Siedlung, 2333 Leopoldsdorf</div></div></div>
+                <div class="kontakt-detail"><div class="kd-icon"><i data-lucide="home"></i></div><div><div class="kd-label">Objekt</div><div class="kd-value">Dachgeschosswohnung, Erstbezug 2004</div></div></div>
+                <div class="kontakt-detail"><div class="kd-icon"><i data-lucide="tag"></i></div><div><div class="kd-label">Verkauf</div><div class="kd-value">Privatverkauf &ndash; ohne Maklerprovision</div></div></div>
                 <div class="vorteile-box">
                     <h4>Ihre Vorteile auf einen Blick</h4>
                     <ul>
@@ -517,9 +547,9 @@
                         <li><span class="check"><i data-lucide="check"></i></span>Exklusiver Badesee direkt vor der T&uuml;r</li>
                         <li><span class="check"><i data-lucide="check"></i></span>Dachterrasse mit Outdoork&uuml;che &amp; Lounge</li>
                         <li><span class="check"><i data-lucide="check"></i></span>2 Tiefgaragen-Stellpl&auml;tze mit Liftanbindung</li>
+                        <li><span class="check"><i data-lucide="check"></i></span>WC auf beiden Etagen</li>
                         <li><span class="check"><i data-lucide="check"></i></span>Eigene PV-Anlage &amp; 7kWh Speicher</li>
                         <li><span class="check"><i data-lucide="check"></i></span>Vollm&ouml;bliert &amp; sofort bezugsbereit</li>
-                        <li><span class="check"><i data-lucide="check"></i></span>Schnelle Autobahnzufahrt</li>
                     </ul>
                 </div>
             </div>
@@ -537,7 +567,6 @@
     </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
     <p style="font-family:'Playfair Display',serif;font-size:1.1rem;color:rgba(255,255,255,0.85);margin-bottom:0.5rem;">Aura Siedlung &ndash; Traumwohnung Leopoldsdorf</p>
     <a href="tel:+4369915001312" class="footer-phone"><i data-lucide="phone"></i> +43 699 150 013 12</a>
@@ -546,16 +575,65 @@
 </footer>
 
 <script>
-    // Init Lucide icons
     lucide.createIcons();
 
-    // Scroll reveal
-    const reveals = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); } });
-    }, { threshold: 0.12 });
-    reveals.forEach(el => observer.observe(el));
-</script>
+    // Slider state
+    const sliders = {};
 
+    function initSlider(name, count, interval) {
+        sliders[name] = { current: 0, count: count, timer: null };
+        const dotsEl = document.getElementById(name + '-dots');
+        if (dotsEl) {
+            dotsEl.innerHTML = '';
+            for (let i = 0; i < count; i++) {
+                const d = document.createElement('button');
+                d.className = 'slider-dot' + (i === 0 ? ' active' : '');
+                d.onclick = () => slideTo(name, i);
+                dotsEl.appendChild(d);
+            }
+        }
+        autoPlay(name, interval || 4500);
+    }
+
+    function slideTo(name, idx) {
+        const s = sliders[name];
+        if (!s) return;
+        s.current = (idx + s.count) % s.count;
+        const track = document.getElementById(name + '-track');
+        if (track) track.style.transform = 'translateX(-' + (s.current * 100) + '%)';
+        const dots = document.querySelectorAll('#' + name + '-dots .slider-dot');
+        dots.forEach((d, i) => d.classList.toggle('active', i === s.current));
+    }
+
+    function slideMove(name, dir) {
+        const s = sliders[name];
+        if (!s) return;
+        clearTimeout(s.timer);
+        slideTo(name, s.current + dir);
+        autoPlay(name, 4500);
+    }
+
+    function autoPlay(name, interval) {
+        const s = sliders[name];
+        if (!s) return;
+        s.timer = setTimeout(() => { slideTo(name, s.current + 1); autoPlay(name, interval); }, interval);
+    }
+
+    // Init all sliders
+    window.addEventListener('load', () => {
+        initSlider('wohnbereich', 2, 5000);
+        initSlider('schlafzimmer', 3, 4500);
+        initSlider('bad', 2, 5500);
+        initSlider('dachterrasse', 3, 4000);
+        initSlider('ausskueche', 3, 4200);
+
+        // Scroll reveal
+        const reveals = document.querySelectorAll('.reveal');
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        reveals.forEach(el => obs.observe(el));
+    });
+</script>
 </body>
 </html>
