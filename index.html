@@ -232,7 +232,18 @@
         <li><a href="#kontakt">Kontakt</a></li>
     </ul>
     <span class="nav-badge">Privatverkauf</span>
+    <button class="hamburger" id="hamburger" aria-label="Men&uuml; &ouml;ffnen" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+    </button>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+    <a href="#badesee" onclick="closeMenu()">Badesee</a>
+    <a href="#raume" onclick="closeMenu()">R&auml;ume</a>
+    <a href="#dachterrasse" onclick="closeMenu()">Dachterrasse</a>
+    <a href="#lage" onclick="closeMenu()">Lage</a>
+    <a href="#kontakt" onclick="closeMenu()">Kontakt</a>
+    <a href="tel:+4369915001312" style="color:var(--accent);font-weight:700;"><i data-lucide="phone" style="width:16px;height:16px;display:inline;"></i> Jetzt anrufen</a>
+</div>
 
 <section class="hero">
     <div class="hero-img-wrap">
@@ -600,6 +611,33 @@
 <script>
     lucide.createIcons();
 
+    // Hamburger menu
+    function toggleMenu() {
+        const menu = document.getElementById('mobileMenu');
+        const btn = document.getElementById('hamburger');
+        menu.classList.toggle('open');
+        btn.classList.toggle('open');
+    }
+    function closeMenu() {
+        document.getElementById('mobileMenu').classList.remove('open');
+        document.getElementById('hamburger').classList.remove('open');
+    }
+    // Close menu on scroll
+    window.addEventListener('scroll', closeMenu);
+
+    // Touch/Swipe support for sliders
+    function addSwipeSupport(sliderEl, name) {
+        let startX = 0;
+        let isDragging = false;
+        sliderEl.addEventListener('touchstart', e => { startX = e.touches[0].clientX; isDragging = true; }, {passive:true});
+        sliderEl.addEventListener('touchend', e => {
+            if (!isDragging) return;
+            const diff = startX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 40) slideMove(name, diff > 0 ? 1 : -1);
+            isDragging = false;
+        }, {passive:true});
+    }
+
     // Slider state
     const sliders = {};
 
@@ -644,7 +682,21 @@
 
     // Init all sliders
     window.addEventListener('load', () => {
-        initSlider('wohnbereich', 2, 5000);
+        // Init sliders with swipe support
+        const sliderNames = [
+            ['wohnbereich',2,5000],['kueche',3,4800],['schlafzimmer',3,4500],
+            ['bad',2,5500],['dachterrasse',3,4000],['ausskueche',3,4200],
+            ['terrasse',2,5000],['badesee',1,0]
+        ];
+        sliderNames.forEach(([name, count, interval]) => {
+            if (count > 1) {
+                initSlider(name, count, interval);
+                const track = document.getElementById(name + '-track');
+                if (track) addSwipeSupport(track.parentElement, name);
+            }
+        });
+        // Keep original calls for backwards compat - skip them
+        if(false) initSlider('wohnbereich', 2, 5000);
         initSlider('kueche', 3, 4800);
         initSlider('terrasse', 2, 5000);
         initSlider('schlafzimmer', 3, 4500);
