@@ -72,7 +72,7 @@
         .slider { position:relative; overflow:hidden; border-radius:1.5rem; }
         .slider-track { display:flex; transition:transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94); height:100%; }
         .slider-slide { min-width:100%; height:100%; flex-shrink:0; }
-        .slider-slide img { width:100%; height:100%; object-fit:cover; display:block; }
+        .slider-slide img { width:100%; height:100%; object-fit:cover; object-position:center; display:block; }
         .slider-btn { position:absolute; top:50%; transform:translateY(-50%); background:rgba(26,58,74,0.65); border:none; color:white; width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; transition:all 0.3s; z-index:5; backdrop-filter:blur(4px); }
         .slider-btn:hover { background:var(--accent); color:var(--primary); }
         .slider-btn.prev { left:1rem; }
@@ -261,13 +261,13 @@
 
             /* Badesee */
             .badesee-grid { grid-template-columns:1fr !important; gap:2rem !important; }
-            .badesee-img { height:56vw !important; max-height:240px; border-radius:1.2rem; }
+            .badesee-img { height:auto !important; aspect-ratio:16/9 !important; width:100% !important; border-radius:1.2rem; }
             .badesee-features { grid-template-columns:1fr 1fr !important; }
 
             /* Raeume grid */
             .raume-grid { grid-template-columns:1fr !important; gap:1.5rem; }
             .raum-card { border-radius:1.2rem; }
-            .raum-slider { height:56vw !important; max-height:220px !important; }
+            .raum-slider { height:auto !important; aspect-ratio:4/3 !important; }
             .raum-body { padding:1.25rem; }
             .raum-title { font-size:1.1rem; }
             .raum-text { font-size:0.88rem; }
@@ -288,9 +288,10 @@
 
             /* Terrasse Unten special grid */
             .terrasse-unten-grid { grid-template-columns:1fr !important; }
-            .terrasse-img-wrap { height:56vw !important; max-height:240px; }
-            .terrasse-unten-grid > div:first-child { height:56vw !important; max-height:240px !important; }
-            .terrasse-unten-grid .slider { height:56vw !important; max-height:240px !important; }
+            .terrasse-img-wrap { height:auto !important; aspect-ratio:4/3 !important; }
+            .terrasse-unten-grid > div:first-child { height:auto !important; aspect-ratio:4/3 !important; }
+            .terrasse-unten-grid .slider { height:100% !important; position:absolute !important; inset:0 !important; }
+            .terrasse-img-wrap { position:relative !important; }
             .terrasse-unten-grid img { width:100% !important; height:100% !important; object-fit:cover !important; object-position:center !important; }
 
             /* Slider */
@@ -299,13 +300,13 @@
 
             /* Dachterrasse */
             .dachterrasse-section { padding:3rem 1.2rem; }
-            .dt-hero { height:56vw !important; max-height:280px !important; border-radius:1.2rem !important; }
+            .dt-hero { height:auto !important; aspect-ratio:16/9 !important; border-radius:1.2rem !important; }
             .dt-features { grid-template-columns:1fr 1fr !important; gap:1rem; }
             .dt-feature { padding:1.25rem 1rem; }
 
             /* Outdoor Küche */
             .outdoor-grid { grid-template-columns:1fr !important; gap:2rem !important; }
-            .outdoor-slider { height:56vw !important; max-height:240px !important; }
+            .outdoor-slider { height:auto !important; aspect-ratio:4/3 !important; }
 
             /* Energie */
             .energie-grid { grid-template-columns:1fr 1fr !important; gap:1rem; }
@@ -313,7 +314,7 @@
 
             /* Lage */
             .lage-grid { grid-template-columns:1fr !important; gap:2rem !important; }
-            .map-placeholder { height:56vw !important; max-height:260px; border-radius:1.2rem; }
+            .map-placeholder { height:auto !important; aspect-ratio:16/9 !important; border-radius:1.2rem; }
 
             /* Preis */
             .preis-box { padding:2rem 1.5rem; border-radius:1.5rem; }
