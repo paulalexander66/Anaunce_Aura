@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traumwohnung Leopoldsdorf – Privatverkauf</title>
+    <meta name="description" content="Wohnen wie im Urlaub – exklusive Dachgeschosswohnung direkt am Badesee in Leopoldsdorf. 4 Zimmer, 95m², Dachterrasse, Privatverkauf ohne Provision.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a3a4a;
+            --accent: #c8a96e;
+            --accent-light: #e8d5a3;
+            --text: #2d2d2d;
+            --text-light: #666;
+            --bg-light: #f8f6f2;
+            --white: #ffffff;
+            --border: #e0d8cc;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: var(--white);
+        }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            background: rgba(26, 58, 74, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent);
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--accent); }
+        .nav-badge {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 0.4rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* HERO */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex; align-items: center; justify-content: center;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute; inset: 0;
+            background: linear-gradient(135deg, #1a3a4a 0%, #2d6a8a 50%, #1a4a3a 100%);
+        }
+        .hero-img-placeholder {
+            position: absolute; inset: 0;
+            background: linear-gradient(135deg, #1a3a4a 0%, #2d6a8a 50%, #1a4a3a 100%);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .hero-img-placeholder img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            opacity: 0.5;
+        }
+        .hero-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to bottom, rgba(26,58,74,0.3) 0%, rgba(26,58,74,0.7) 100%);
+        }
+        .hero-content {
+            position: relative; z-index: 2;
+            text-align: center; color: white;
+            padding: 2rem;
+            max-width: 900px;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            line-height: 1.15;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+        .hero h1 span { color: var(--accent-light); }
+        .hero-sub {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+        .hero-stats {
+            display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+        .hero-stat {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 1rem 1.8rem;
+            border-radius: 1rem;
+            text-align: center;
+        }
+        .hero-stat-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--accent-light);
+        }
+        .hero-stat-label {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .hero-cta {
+            display: inline-flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+        }
+        .btn-primary {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 1rem 2.5rem;
+            border-radius: 3rem;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 20px rgba(200,169,110,0.4);
+        }
+        .btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); }
+        .btn-outline {
+            background: transparent;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 3rem;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1rem;
+            border: 2px solid rgba(255,255,255,0.5);
+            transition: all 0.3s;
+        }
+        .btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+        .scroll-indicator {
+            position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+        .scroll-indicator svg { width: 30px; height: 30px; fill: rgba(255,255,255,0.6); }
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(8px); }
+        }
+
+        /* PRIVATVERKAUF BANNER */
+        .priv-banner {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 1.2rem 2rem;
+            font-size: 1rem;
+        }
+        .priv-banner strong { color: var(--accent); }
+
+        /* SECTIONS */
+        section { padding: 5rem 2rem; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-label {
+            display: inline-block;
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        .section-text {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 1.05rem;
+            max-width: 650px;
+        }
+
+        /* BADESEE HIGHLIGHT */
+        .badesee-section {
+            background: var(--bg-light);
+        }
+        .badesee-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .badesee-visual {
+            position: relative;
+        }
+        .img-placeholder {
+            background: linear-gradient(135deg, #c8e6f0, #a8d8e8);
+            border-radius: 1.5rem;
+            overflow: hidden;
+            position: relative;
+        }
+        .img-placeholder img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .img-placeholder-label {
+            position: absolute; inset: 0;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            background: linear-gradient(135deg, #2d6a8a33, #1a4a3a33);
+            color: white;
+            font-size: 0.9rem;
+            font-weight: 500;
+            gap: 0.5rem;
+            opacity: 0;
+        }
+        .img-placeholder img:not([src]), .img-placeholder img[src=''] {
+            display: none;
+        }
+        .img-placeholder:not(:has(img[src]:not([src='']))) .img-placeholder-label { opacity: 1; }
+        .img-main { height: 420px; }
+        .img-sm { height: 200px; }
+        .badge-floating {
+            position: absolute;
+            background: var(--primary);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .badge-floating.top-right { top: -1rem; right: -1rem; }
+        .badge-floating .bf-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--accent);
+        }
+        .badge-floating .bf-label { font-size: 0.75rem; opacity: 0.8; }
+        .highlight-list { list-style: none; margin-top: 1.5rem; }
+        .highlight-list li {
+            display: flex; align-items: flex-start; gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 1rem;
+            color: var(--text);
+        }
+        .highlight-list li:last-child { border-bottom: none; }
+        .highlight-list .icon {
+            width: 24px; height: 24px; min-width: 24px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: white;
+            font-size: 0.8rem;
+            margin-top: 2px;
+        }
+
+        /* FAKTEN */
+        .fakten-section { background: var(--primary); color: white; }
+        .fakten-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .fakt-card {
+            text-align: center;
+            padding: 2rem 1rem;
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 1rem;
+            transition: all 0.3s;
+        }
+        .fakt-card:hover { border-color: var(--accent); background: rgba(200,169,110,0.05); }
+        .fakt-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+        .fakt-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 0.25rem;
+        }
+        .fakt-label { font-size: 0.85rem; opacity: 0.7; }
+
+        /* RÄUME */
+        .raume-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .raum-card {
+            background: var(--bg-light);
+            border-radius: 1.5rem;
+            overflow: hidden;
+            transition: all 0.3s;
+            border: 1px solid var(--border);
+        }
+        .raum-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .raum-img { height: 220px; position: relative; }
+        .raum-img-inner {
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, #c8d8e0, #d8c8b0);
+            display: flex; align-items: center; justify-content: center;
+            color: #888;
+            font-size: 0.85rem;
+            flex-direction: column; gap: 0.5rem;
+        }
+        .raum-img img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+        }
+        .raum-body { padding: 1.5rem; }
+        .raum-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+        .raum-text { color: var(--text-light); line-height: 1.7; font-size: 0.95rem; }
+        .raum-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+        .tag {
+            background: white;
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 0.3rem 0.75rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+        }
+
+        /* DACHTERRASSE */
+        .dachterrasse-section { background: var(--bg-light); }
+        .dt-hero {
+            height: 500px;
+            border-radius: 2rem;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 3rem;
+        }
+        .dt-hero-inner {
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, #8ab8c8 0%, #c8d8b0 100%);
+            display: flex; align-items: center; justify-content: center;
+            color: white;
+            font-size: 1rem;
+            flex-direction: column; gap: 0.5rem;
+        }
+        .dt-hero img {
+            width: 100%; height: 100%; object-fit: cover;
+        }
+        .dt-hero-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(26,58,74,0.8) 0%, transparent 60%);
+            display: flex; align-items: flex-end; padding: 2.5rem;
+        }
+        .dt-hero-text { color: white; }
+        .dt-hero-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .dt-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .dt-feature {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+            display: flex; gap: 1rem; align-items: flex-start;
+        }
+        .dt-feature-icon {
+            font-size: 1.8rem;
+            min-width: 40px;
+        }
+        .dt-feature h4 { color: var(--primary); margin-bottom: 0.3rem; font-size: 1rem; }
+        .dt-feature p { color: var(--text-light); font-size: 0.9rem; line-height: 1.5; }
+
+        /* AUSSTATTUNG */
+        .ausstattung-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .ausstattung-item {
+            display: flex; align-items: center; gap: 1rem;
+            padding: 1.2rem 1.5rem;
+            background: var(--bg-light);
+            border-radius: 1rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+        .ausstattung-item:hover { border-color: var(--accent); }
+        .ausstattung-item .ai-icon { font-size: 1.5rem; }
+        .ausstattung-item span { font-weight: 500; color: var(--text); font-size: 0.95rem; }
+
+        /* LAGE */
+        .lage-section { background: var(--primary); color: white; }
+        .lage-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        .lage-section .section-title { color: white; }
+        .lage-section .section-text { color: rgba(255,255,255,0.8); }
+        .transport-list { list-style: none; margin-top: 2rem; }
+        .transport-list li {
+            display: flex; align-items: center; gap: 1rem;
+            padding: 0.9rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.9);
+            font-size: 0.95rem;
+        }
+        .transport-list .tl-icon {
+            background: rgba(200,169,110,0.2);
+            color: var(--accent);
+            width: 36px; height: 36px; min-width: 36px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1rem;
+        }
+        .map-placeholder {
+            height: 380px;
+            background: linear-gradient(135deg, #2d6a8a, #1a4a3a);
+            border-radius: 1.5rem;
+            display: flex; align-items: center; justify-content: center;
+            color: rgba(255,255,255,0.7);
+            flex-direction: column; gap: 1rem;
+            font-size: 1rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .map-placeholder svg { width: 48px; height: 48px; opacity: 0.5; }
+
+        /* ENERGIE */
+        .energie-section { background: var(--bg-light); }
+        .energie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+        .energie-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+        .energie-badge {
+            width: 60px; height: 60px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+        }
+        .badge-c { background: #ffd700; color: #333; }
+        .badge-green { background: #4caf50; color: white; }
+        .energie-card h4 { color: var(--primary); margin-bottom: 0.5rem; }
+        .energie-card p { color: var(--text-light); font-size: 0.9rem; }
+
+        /* GALERIE PLACEHOLDER */
+        .galerie-section {}
+        .galerie-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            grid-template-rows: 250px 250px;
+            gap: 1rem;
+            margin-top: 3rem;
+        }
+        .galerie-item {
+            border-radius: 1rem;
+            overflow: hidden;
+            background: linear-gradient(135deg, #c8d8e0, #d8c8b0);
+            display: flex; align-items: center; justify-content: center;
+            color: #888;
+            font-size: 0.85rem;
+            flex-direction: column; gap: 0.5rem;
+            transition: all 0.3s;
+        }
+        .galerie-item:hover { opacity: 0.9; }
+        .galerie-item img { width: 100%; height: 100%; object-fit: cover; }
+        .galerie-item.span-col { grid-row: span 2; }
+
+        /* PREIS */
+        .preis-section {
+            background: linear-gradient(135deg, var(--primary) 0%, #2d6a8a 100%);
+            color: white;
+            text-align: center;
+        }
+        .preis-section .section-title { color: white; }
+        .preis-box {
+            display: inline-block;
+            background: rgba(255,255,255,0.05);
+            border: 2px solid var(--accent);
+            border-radius: 2rem;
+            padding: 3rem 5rem;
+            margin: 2rem 0;
+        }
+        .preis-value {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            color: var(--accent);
+        }
+        .preis-label { font-size: 1.1rem; opacity: 0.8; margin-top: 0.5rem; }
+        .preis-note {
+            background: rgba(200,169,110,0.15);
+            border: 1px solid rgba(200,169,110,0.3);
+            border-radius: 1rem;
+            padding: 1.2rem 2rem;
+            display: inline-block;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: var(--accent-light);
+        }
+
+        /* KONTAKT */
+        .kontakt-section {}
+        .kontakt-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        .kontakt-form {
+            display: flex; flex-direction: column; gap: 1.2rem;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem 1.2rem;
+            border: 1.5px solid var(--border);
+            border-radius: 0.75rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: var(--text);
+            background: var(--bg-light);
+            transition: border-color 0.3s;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: white;
+        }
+        .form-group textarea { resize: vertical; min-height: 130px; }
+        .form-submit {
+            background: var(--accent);
+            color: var(--primary);
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 3rem;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            align-self: flex-start;
+        }
+        .form-submit:hover { background: var(--accent-light); transform: translateY(-2px); }
+        .kontakt-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        .kontakt-info p { color: var(--text-light); line-height: 1.8; margin-bottom: 2rem; }
+        .kontakt-detail {
+            display: flex; align-items: center; gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+        }
+        .kontakt-detail .kd-icon {
+            background: var(--bg-light);
+            width: 44px; height: 44px; min-width: 44px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem;
+        }
+        .kd-label { font-size: 0.8rem; color: var(--text-light); }
+        .kd-value { font-weight: 500; color: var(--text); }
+        .vorteile-box {
+            background: var(--bg-light);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin-top: 2rem;
+            border: 1px solid var(--border);
+        }
+        .vorteile-box h4 {
+            color: var(--primary);
+            font-family: 'Playfair Display', serif;
+            margin-bottom: 1rem;
+        }
+        .vorteile-box ul { list-style: none; }
+        .vorteile-box li {
+            padding: 0.5rem 0;
+            display: flex; align-items: center; gap: 0.75rem;
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+        .vorteile-box li::before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--primary);
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav { padding: 1rem; }
+            .nav-links { display: none; }
+            .badesee-grid, .lage-grid, .kontakt-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .galerie-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+            .galerie-item.span-col { grid-row: span 1; }
+            .preis-box { padding: 2rem 2.5rem; }
+            section { padding: 3rem 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-logo">Traumwohnung Leopoldsdorf</div>
+        <ul class="nav-links">
+            <li><a href="#badesee">Badesee</a></li>
+            <li><a href="#raume">Räume</a></li>
+            <li><a href="#dachterrasse">Dachterrasse</a></li>
+            <li><a href="#lage">Lage</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+        <span class="nav-badge">Privatverkauf</span>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-img-placeholder">
+            <img src="images/hero.jpg" alt="Dachterrasse Traumwohnung">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">🏖️ Wohnen wie im Urlaub – Direkter Badeseezugang</div>
+            <h1>Ihr <span>Traumzuhause</span><br>direkt am See</h1>
+            <p class="hero-sub">Exklusive Dachgeschosswohnung mit 4 Zimmern, zwei Terrassen &amp; spektakulärem Ausblick<br>in Leopoldsdorf – <strong>Privatverkauf, keine Maklerprovision</strong></p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-value">€ 585.000</div>
+                    <div class="hero-stat-label">Kaufpreis</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">95 m²</div>
+                    <div class="hero-stat-label">Wohnfläche</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">4</div>
+                    <div class="hero-stat-label">Zimmer</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">2</div>
+                    <div class="hero-stat-label">Terrassen</div>
+                </div>
+            </div>
+            <div class="hero-cta">
+                <a href="#kontakt" class="btn-primary">Besichtigung anfragen</a>
+                <a href="#badesee" class="btn-outline">Mehr erfahren</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
+        </div>
+    </section>
+
+    <!-- PRIVATVERKAUF BANNER -->
+    <div class="priv-banner">
+        ✨ <strong>Kein Makler – Kein Aufschlag:</strong> Sie kaufen direkt vom Eigentümer und sparen die gesamte Maklerprovision!
+    </div>
+
+    <!-- BADESEE HIGHLIGHT -->
+    <section class="badesee-section" id="badesee">
+        <div class="container">
+            <div class="badesee-grid">
+                <div class="badesee-visual">
+                    <div class="img-placeholder img-main">
+                        <img src="images/badesee.jpg" alt="Badesee">
+                        <div class="img-placeholder-label">
+                            <span style="font-size:2rem">🏖️</span>
+                            <span>Foto: Exklusiver Badesee</span>
+                        </div>
+                    </div>
+                    <div class="badge-floating top-right">
+                        <div class="bf-value">Exklusiv</div>
+                        <div class="bf-label">Nur für Bewohner</div>
+                    </div>
+                </div>
+                <div>
+                    <span class="section-label">Das besondere Highlight</span>
+                    <h2 class="section-title">Urlaub beginnt<br>vor Ihrer Haustür</h2>
+                    <p class="section-text">Stellen Sie sich vor, jeden Morgen aufzuwachen und nur wenige Schritte vom eigenen Badesee entfernt zu sein – exklusiv für die Bewohner der Anlage. Hier wird Wohnen zu einem ganzjährigen Urlaubsgefühl.</p>
+                    <ul class="highlight-list">
+                        <li><div class="icon">🏊</div><span>Eigener <strong>Badesee mit exklusivem Zugang</strong> nur für Bewohner der Wohnanlage</span></li>
+                        <li><div class="icon">⛳</div><span>Fußläufig zum renommierten <strong>Golfclub Leopoldsdorf</strong></span></li>
+                        <li><div class="icon">🌿</div><span><strong>Ruhige, gepflegte Wohnanlage</strong> in überschaubarer, familiärer Gemeinschaft</span></li>
+                        <li><div class="icon">🌅</div><span><strong>Dachterrasse</strong> mit spektakulärem Panoramablick über die Umgebung</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ECKDATEN -->
+    <section class="fakten-section">
+        <div class="container">
+            <div style="text-align:center">
+                <span class="section-label" style="color:var(--accent)">Auf einen Blick</span>
+                <h2 class="section-title" style="color:white">Alle Eckdaten</h2>
+            </div>
+            <div class="fakten-grid">
+                <div class="fakt-card">
+                    <div class="fakt-icon">🏠</div>
+                    <div class="fakt-value">4</div>
+                    <div class="fakt-label">Zimmer</div>
+                </div>
+                <div class="fakt-card">
+                    <div class="fakt-icon">📐</div>
+                    <div class="fakt-value">95 m²</div>
+                    <div class="fakt-label">Wohnfläche</div>
+                </div>
+                <div class="fakt-card">
+                    <div class="fakt-icon">🏗️</div>
+                    <div class="fakt-value">150 m²</div>
+                    <div class="fakt-label">Nutzfläche gesamt</div>
+                </div>
+                <div class="fakt-card">
+                    <div class="fakt-icon">🌇</div>
+                    <div class="fakt-value">2</div>
+                    <div class="fakt-label">Terrassen</div>
+                </div>
+                <div class="fakt-card">
+                    <div class="fakt-icon">🚗</div>
+                    <div class="fakt-value">2</div>
+                    <div class="fakt-label">Tiefgaragen-Stellplätze</div>
+                </div>
+                <div class="fakt-card">
+                    <div class="fakt-icon">🏢</div>
+                    <div class="fakt-value">DG</div>
+                    <div class="fakt-label">Dachgeschoss – Neubau</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RÄUME -->
+    <section id="raume">
+        <div class="container">
+            <span class="section-label">Raumaufteilung</span>
+            <h2 class="section-title">Großzügig auf<br>zwei Ebenen</h2>
+            <div class="raume-grid">
+                <div class="raum-card">
+                    <div class="raum-img">
+                        <div class="raum-img-inner">
+                            <span style="font-size:2rem">🛋️</span>
+                            <span>Foto: Wohn- &amp; Essbereich</span>
+                        </div>
+                    </div>
+                    <div class="raum-body">
+                        <h3 class="raum-title">Wohn- &amp; Essbereich</h3>
+                        <p class="raum-text">Großzügiger, lichtdurchfluteter Wohn- und Essbereich mit angeschlossener Einbauküche und direktem Zugang zur gemütlichen Terrasse.</p>
+                        <div class="raum-tags">
+                            <span class="tag">Parkettboden</span>
+                            <span class="tag">Einbauküche</span>
+                            <span class="tag">Terrassenzugang</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="raum-card">
+                    <div class="raum-img">
+                        <div class="raum-img-inner">
+                            <span style="font-size:2rem">🛏️</span>
+                            <span>Foto: Schlafzimmer</span>
+                        </div>
+                    </div>
+                    <div class="raum-body">
+                        <h3 class="raum-title">3 Schlafzimmer</h3>
+                        <p class="raum-text">Drei großzügige Schlafzimmer verteilt auf zwei Ebenen – ideal für Familien oder als kombiniertes Wohn-Arbeitszimmer Konzept.</p>
+                        <div class="raum-tags">
+                            <span class="tag">Parkettboden</span>
+                            <span class="tag">Klimatisiert</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="raum-card">
+                    <div class="raum-img">
+                        <div class="raum-img-inner">
+                            <span style="font-size:2rem">🛁</span>
+                            <span>Foto: Badezimmer</span>
+                        </div>
+                    </div>
+                    <div class="raum-body">
+                        <h3 class="raum-title">2 Badezimmer</h3>
+                        <p class="raum-text">Zwei hochwertige Badezimmer: eines mit Badewanne und separatem WC, das zweite mit Dusche und Toilette im Obergeschoss.</p>
+                        <div class="raum-tags">
+                            <span class="tag">Badewanne</span>
+                            <span class="tag">Dusche</span>
+                            <span class="tag">Fliesen</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DACHTERRASSE -->
+    <section class="dachterrasse-section" id="dachterrasse">
+        <div class="container">
+            <span class="section-label">Das Highlight</span>
+            <h2 class="section-title">Die Dachterrasse –<br>Ihr privates Paradies</h2>
+            <div class="dt-hero">
+                <div class="dt-hero-inner">
+                    <span style="font-size:3rem">🌅</span>
+                    <span style="color:rgba(255,255,255,0.8);font-size:1rem">Foto: Dachterrasse mit Panoramablick</span>
+                </div>
+                <div class="dt-hero-overlay">
+                    <div class="dt-hero-text">
+                        <h3>Privater Himmel über Leopoldsdorf</h3>
+                        <p style="opacity:0.85">Hochwertig ausgestattet – für kulinarische Abende und entspannte Stunden</p>
+                    </div>
+                </div>
+            </div>
+            <div class="dt-features">
+                <div class="dt-feature">
+                    <div class="dt-feature-icon">🏛️</div>
+                    <div>
+                        <h4>Überdachte Lounge</h4>
+                        <p>Mit elektrischen Rollläden als Sonnen- und Windschutz – ganzjährig nutzbar</p>
+                    </div>
+                </div>
+                <div class="dt-feature">
+                    <div class="dt-feature-icon">🔥</div>
+                    <div>
+                        <h4>Outdoor-Küche &amp; Grill</h4>
+                        <p>Napoleon Gasgrill und Santos BBQ Cart – für perfekte kulinarische Abende im Freien</p>
+                    </div>
+                </div>
+                <div class="dt-feature">
+                    <div class="dt-feature-icon">🚿</div>
+                    <div>
+                        <h4>Außendusche &amp; Liegebereich</h4>
+                        <p>Erfrischende Außendusche und komfortabler Liegebereich für sonnige Tage</p>
+                    </div>
+                </div>
+                <div class="dt-feature">
+                    <div class="dt-feature-icon">🌱</div>
+                    <div>
+                        <h4>Bepflanzung &amp; Bewässerung</h4>
+                        <p>Automatisches Bewässerungssystem sorgt für stets gepflegte Begrünung</p>
+                    </div>
+                </div>
+                <div class="dt-feature">
+                    <div class="dt-feature-icon">📦</div>
+                    <div>
+                        <h4>Biohort Stauraum-Box</h4>
+                        <p>Großzügige, elegante Stauraum-Lösung die sich harmonisch ins Gesamtbild einfügt</p>
+                    </div>
+                </div>
+                <div class="dt-feature">
+                    <div class="dt-feature-icon">🌡️</div>
+                    <div>
+                        <h4>Schwedenofen</h4>
+                        <p>Für gemütliche Abende wenn es kühler wird – das besondere Wohlfühlfeeling</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AUSSTATTUNG -->
+    <section id="ausstattung">
+        <div class="container">
+            <span class="section-label">Premium Qualität</span>
+            <h2 class="section-title">Hochwertige Ausstattung<br>in jedem Detail</h2>
+            <p class="section-text">In sämtlichen Bereichen wurde auf qualitativ hochwertige und langlebige Materialien gesetzt. Von der Küche bis zur Dachterrasse – alles aus einem Guss.</p>
+            <div class="ausstattung-grid">
+                <div class="ausstattung-item"><span class="ai-icon">🛗</span><span>Lift bis in die Tiefgarage</span></div>
+                <div class="ausstattung-item"><span class="ai-icon">🚗</span><span>2 Tiefgaragen-Stellplätze</span></div>
+                <div class="ausstattung-item"><span class="ai-icon">📦</span><span>Großes Kellerabteil</span></div>
+                <div class="ausstattung-item"><span class="ai-icon">❄️</span><span>Klimaanlage (Obergeschoss)</span></div>
+                <div class="ausstattung-item"><span class="ai-icon">🔥</span><span>Schwedenofen</span></div>
+                <div class="ausstattung-item"><span class="ai-icon">🍳</span><span>Küppersbusch / Bosch / Siemens</span></div>
+                <div class="ausstattung-item"><span class="ai-icon">🪵</span><span>Parkett in allen Wohnräumen</span></div>
+                <div class="ausstattung-item"><span class="ai-icon">🛁</span><span>Badewanne &amp; separate Dusche</span></div>
+                <div class="ausstattung-item"><span class="ai-icon">☀️</span><span>Photovoltaik + 7kWh Speicher</span></div>
+                <div class="ausstattung-item"><span class="ai-icon">🌡️</span><span>Fernwärme Heizung</span></div>
+                <div class="ausstattung-item"><span class="ai-icon">🪴</span><span>Möbliert / Teilmöbliert</span></div>
+                <div class="ausstattung-item"><span class="ai-icon">🏗️</span><span>Neubau Qualität</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIE -->
+    <section id="galerie" style="background: var(--bg-light);">
+        <div class="container">
+            <span class="section-label">Bildergalerie</span>
+            <h2 class="section-title">Einblicke in Ihr<br>neues Zuhause</h2>
+            <div class="galerie-grid">
+                <div class="galerie-item span-col">
+                    <span style="font-size:2.5rem">🏠</span>
+                    <span style="color:#888;font-size:0.9rem">Hauptfoto – Dachterrasse / Außenansicht</span>
+                </div>
+                <div class="galerie-item">
+                    <span style="font-size:1.8rem">🛋️</span>
+                    <span style="color:#888;font-size:0.8rem">Wohnbereich</span>
+                </div>
+                <div class="galerie-item">
+                    <span style="font-size:1.8rem">🍳</span>
+                    <span style="color:#888;font-size:0.8rem">Küche</span>
+                </div>
+                <div class="galerie-item">
+                    <span style="font-size:1.8rem">🛏️</span>
+                    <span style="color:#888;font-size:0.8rem">Schlafzimmer</span>
+                </div>
+                <div class="galerie-item">
+                    <span style="font-size:1.8rem">🏊</span>
+                    <span style="color:#888;font-size:0.8rem">Badesee</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LAGE -->
+    <section class="lage-section" id="lage">
+        <div class="container">
+            <div class="lage-grid">
+                <div>
+                    <span class="section-label">Standort</span>
+                    <h2 class="section-title">Leopoldsdorf –<br>Das Beste beider Welten</h2>
+                    <p class="section-text">Ruhig wohnen und trotzdem alles in Reichweite: Wien ist in 30 Minuten erreichbar, der Flughafen in 15 Minuten. Gleichzeitig finden Sie alles des täglichen Bedarfs fußläufig.</p>
+                    <ul class="transport-list">
+                        <li><span class="tl-icon">✈️</span><span><strong>15 Min.</strong> zum Flughafen Wien-Schwechat</span></li>
+                        <li><span class="tl-icon">🏙️</span><span><strong>30 Min.</strong> zur Wiener Innenstadt</span></li>
+                        <li><span class="tl-icon">🚌</span><span>Buslinie 266 → Wien Oberlaa direkt</span></li>
+                        <li><span class="tl-icon">🌙</span><span>Nachtlinie 227 → Südtiroler Platz</span></li>
+                        <li><span class="tl-icon">🛒</span><span>Billa Plus nahezu gegenüber</span></li>
+                        <li><span class="tl-icon">🏫</span><span>Kindergarten &amp; Volksschule fußläufig</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="map-placeholder">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        <span>2333 Leopoldsdorf</span>
+                        <span style="font-size:0.8rem">Golfclub Leopoldsdorf</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENERGIE -->
+    <section class="energie-section">
+        <div class="container">
+            <span class="section-label">Nachhaltigkeit</span>
+            <h2 class="section-title">Energie &amp; Heizung</h2>
+            <div class="energie-grid">
+                <div class="energie-card">
+                    <div class="energie-badge badge-c">C</div>
+                    <h4>Energieeffizienz</h4>
+                    <p>fGEE 1,2 – Gesamtenergieeffizienz Klasse C</p>
+                </div>
+                <div class="energie-card">
+                    <div class="energie-badge" style="background:#4a8aaa;color:white">🌊</div>
+                    <h4>Fernwärme</h4>
+                    <p>Komfortable Wärme- und Warmwasserversorgung über Fernwärme</p>
+                </div>
+                <div class="energie-card">
+                    <div class="energie-badge badge-green">☀️</div>
+                    <h4>Photovoltaik</h4>
+                    <p>Eigene PV-Anlage am Dach mit 7kWh Batteriespeicher</p>
+                </div>
+                <div class="energie-card">
+                    <div class="energie-badge" style="background:#e8d5a3;color:#333">C</div>
+                    <h4>Heizwärmebedarf</h4>
+                    <p>HWB 66,4 kWh/m² im Jahr – Klasse C</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PREIS -->
+    <section class="preis-section">
+        <div class="container">
+            <span class="section-label">Investition</span>
+            <h2 class="section-title">Ihr Preisvorteil</h2>
+            <div class="preis-box">
+                <div class="preis-value">€ 585.000</div>
+                <div class="preis-label">Kaufpreis inkl. vollständiger Ausstattung</div>
+            </div>
+            <div><div class="preis-note">✅ Privatverkauf – <strong>Keine Maklerprovision</strong> – Sie sparen bis zu € 21.960!</div></div>
+            <p style="color:rgba(255,255,255,0.6);margin-top:1.5rem;font-size:0.9rem">Betriebskosten: € 483,38/Monat inkl. USt</p>
+        </div>
+    </section>
+
+    <!-- KONTAKT -->
+    <section id="kontakt">
+        <div class="container">
+            <div class="kontakt-grid">
+                <div>
+                    <span class="section-label">Interesse?</span>
+                    <h2 class="section-title">Kontaktieren Sie<br>uns direkt</h2>
+                    <div class="kontakt-info">
+                        <p>Vereinbaren Sie jetzt Ihren unverbindlichen Besichtigungstermin. Wir freuen uns auf Ihre Anfrage!</p>
+                        <div class="kontakt-detail">
+                            <div class="kd-icon">📍</div>
+                            <div><div class="kd-label">Adresse</div><div class="kd-value">2333 Leopoldsdorf bei Wien</div></div>
+                        </div>
+                        <div class="kontakt-detail">
+                            <div class="kd-icon">🏘️</div>
+                            <div><div class="kd-label">Lage</div><div class="kd-value">Golfclub Leopoldsdorf, Dachgeschoss</div></div>
+                        </div>
+                    </div>
+                    <div class="vorteile-box">
+                        <h4>Ihre Vorteile auf einen Blick</h4>
+                        <ul>
+                            <li>Privatverkauf – keine Maklerprovision</li>
+                            <li>Exklusiver Badesee direkt vor der Tür</li>
+                            <li>Dachterrasse mit Outdoorküche &amp; Lounge</li>
+                            <li>2 Tiefgaragen-Stellplätze mit Liftanbindung</li>
+                            <li>Eigene PV-Anlage &amp; 7kWh Speicher</li>
+                            <li>Vollmöbliert &amp; sofort bezugsbereit</li>
+                            <li>Schnelle Autobahnzufahrt</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <form class="kontakt-form" onsubmit="return false;">
+                        <div class="form-group">
+                            <label>Vorname *</label>
+                            <input type="text" placeholder="Ihr Vorname">
+                        </div>
+                        <div class="form-group">
+                            <label>Nachname *</label>
+                            <input type="text" placeholder="Ihr Nachname">
+                        </div>
+                        <div class="form-group">
+                            <label>E-Mail *</label>
+                            <input type="email" placeholder="ihre@email.at">
+                        </div>
+                        <div class="form-group">
+                            <label>Telefon</label>
+                            <input type="tel" placeholder="+43 ...">
+                        </div>
+                        <div class="form-group">
+                            <label>Ihre Nachricht</label>
+                            <textarea placeholder="Ich interessiere mich für die Besichtigung der Wohnung ..."></textarea>
+                        </div>
+                        <button class="form-submit" type="submit">Anfrage senden ✉️</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 Privatverkauf – Traumwohnung Leopoldsdorf | 2333 Leopoldsdorf bei Wien</p>
+        <p style="margin-top:0.5rem;font-size:0.8rem">Privatverkauf – kein gewerblicher Anbieter</p>
+    </footer>
+
+</body>
+</html>
