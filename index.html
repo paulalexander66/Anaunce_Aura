@@ -235,124 +235,193 @@
         .mobile-menu a:last-child { border-bottom:none; }
 
         @media (max-width: 768px) {
-            /* Nav */
+            /* ===== NAVIGATION ===== */
             .hamburger { display:flex; }
             .nav-badge { display:none !important; }
             nav { padding:1rem 1.2rem; }
+            .nav-links { display:none; }
+            .mobile-menu { display:block; }
 
-            /* Hero */
-            .hero { min-height:100svh; }
-            .hero-content { padding:5rem 1.2rem 2rem; }
-            .hero h1 { font-size:2rem; }
-            .hero-sub { font-size:0.95rem; margin-bottom:1.5rem; }
-            .hero-stats { gap:0.75rem; margin-bottom:1.5rem; flex-wrap:wrap; }
-            .hero-stat { padding:0.75rem 1.2rem; flex:1; min-width:130px; }
-            .hero-stat-value { font-size:1.4rem; }
-            .hero-cta { flex-direction:column; align-items:center; gap:0.75rem; }
-            .btn-primary, .btn-outline { width:100%; max-width:300px; justify-content:center; padding:0.9rem 1.5rem; }
-            .scroll-down { display:none; }
+            /* ===== HERO - image natural, text below ===== */
+            .hero {
+                min-height: unset !important;
+                height: auto !important;
+                padding: 0 !important;
+                display: flex;
+                flex-direction: column;
+            }
+            .hero-bg {
+                position: relative !important;
+                width: 100% !important;
+                height: auto !important;
+            }
+            .hero-bg img {
+                width: 100% !important;
+                height: auto !important;
+                object-fit: unset !important;
+                display: block !important;
+                max-height: unset !important;
+            }
+            .hero-overlay {
+                position: relative !important;
+                background: linear-gradient(135deg, #1a3c5e 0%, #2a6496 100%) !important;
+                padding: 2rem 1.2rem !important;
+                top: unset !important; left: unset !important; right: unset !important; bottom: unset !important;
+                transform: none !important;
+                text-align: center;
+            }
+            .hero-badge { font-size: 0.75rem; padding: 0.4rem 0.9rem; margin-bottom: 0.8rem; }
+            .hero h1 { font-size: 1.6rem !important; line-height: 1.3; margin-bottom: 0.6rem; }
+            .hero-sub { font-size: 0.95rem !important; margin-bottom: 1.2rem; }
+            .hero-cta { flex-direction: column; gap: 0.6rem; align-items: center; }
+            .hero-cta a { width: 100%; max-width: 280px; text-align: center; padding: 0.85rem 1.2rem; }
+            .scroll-indicator { display: none; }
 
-            /* General sections */
-            section { padding:3rem 1.2rem; }
-            .section-title { font-size:1.75rem; }
+            /* ===== STATS / ECKDATEN ===== */
+            .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; padding: 1.5rem 1rem; }
+            .stat-item { padding: 1rem 0.8rem; }
+            .stat-value { font-size: 1.4rem; }
 
-            /* Priv banner */
-            .priv-banner { font-size:0.82rem; padding:0.9rem 1rem; flex-wrap:wrap; gap:0.5rem; }
+            /* ===== SECTIONS ===== */
+            section { padding: 2.5rem 1rem; }
+            .section-title { font-size: 1.6rem; margin-bottom: 0.5rem; }
+            .section-sub { font-size: 0.95rem; margin-bottom: 1.5rem; }
 
-            /* Badesee */
-            .badesee-grid { grid-template-columns:1fr !important; gap:2rem !important; }
-            .badesee-img { width:100% !important; aspect-ratio:4/3 !important; object-fit:cover !important; border-radius:1.2rem; }
-            .badesee-features { grid-template-columns:1fr 1fr !important; }
+            /* ===== BADESEE ===== */
+            .badesee-grid { grid-template-columns: 1fr; gap: 0; }
+            .badesee-img {
+                width: 100% !important;
+                height: auto !important;
+                object-fit: unset !important;
+                display: block !important;
+                border-radius: 1.2rem 1.2rem 0 0 !important;
+            }
+            .badesee-content { padding: 1.5rem 1rem; }
+            .badesee-feature { padding: 0.8rem; }
 
-            /* Raeume grid */
-            .raume-grid { grid-template-columns:1fr !important; gap:1.5rem; }
-            .raum-card { border-radius:1.2rem; }
-            /* Slider height fix: let image determine height */
-            .slider, .raum-slider, .outdoor-slider { aspect-ratio:4/3 !important; height:auto !important; overflow:hidden !important; }
-            .slider-track { height:100% !important; }
-            .slider-slide { height:100% !important; }
-            .slider-slide img { width:100% !important; height:100% !important; object-fit:cover !important; object-position:center !important; display:block !important; }
-            .raum-body { padding:1.25rem; }
-            .raum-title { font-size:1.1rem; }
-            .raum-text { font-size:0.88rem; }
+            /* ===== SLIDER - COMPLETE MOBILE REDESIGN ===== */
+            /* Track becomes block - JS controls show/hide */
+            .slider-track {
+                display: block !important;
+                transform: none !important;
+                height: auto !important;
+                transition: none !important;
+            }
+            /* All slides hidden by default, JS shows active */
+            .slider-slide {
+                display: none !important;
+                min-width: 100% !important;
+                height: auto !important;
+                flex: none !important;
+            }
+            /* First slide visible before JS loads */
+            .slider-slide:first-child {
+                display: block !important;
+            }
+            /* JS-controlled active slide */
+            .slider-slide.mobile-active {
+                display: block !important;
+            }
+            /* Images: full width, natural height - NO ZOOM */
+            .slider-slide img,
+            .slider-slide picture img {
+                width: 100% !important;
+                height: auto !important;
+                object-fit: unset !important;
+                object-position: unset !important;
+                max-height: unset !important;
+                display: block !important;
+            }
+            /* Slider wrapper */
+            .slider, .raum-slider, .outdoor-slider {
+                overflow: visible !important;
+                height: auto !important;
+            }
+            /* Slider controls */
+            .slider-controls {
+                position: relative !important;
+                margin-top: 0.5rem !important;
+            }
+            .slider-btn {
+                position: absolute;
+                top: -50px;
+                background: rgba(255,255,255,0.9) !important;
+                border-radius: 50%;
+                width: 36px; height: 36px;
+                font-size: 1rem;
+                z-index: 10;
+            }
+            .slider-btn.prev { left: 8px; }
+            .slider-btn.next { right: 8px; }
+            .slider-dots { margin-top: 0.4rem; }
 
-        /* Terrasse image wrapper - desktop */
-        .terrasse-img-wrap { height:300px; position:relative; overflow:hidden; }
-        /* Terrasse Unten Grid - desktop */
-        .terrasse-unten-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-            background: var(--bg-light);
-            border-radius: 1.5rem;
-            overflow: hidden;
-            border: 1px solid var(--border);
-        }
+            /* ===== RAUMAUFTEILUNG ===== */
+            .raum-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .raum-card { border-radius: 1rem; overflow: hidden; }
+            .raum-body { padding: 1rem; }
+            .raum-title { font-size: 1rem; }
 
-            /* Terrasse Unten special grid */
-            .terrasse-unten-grid { grid-template-columns:1fr !important; }
-            .terrasse-img-wrap { height:auto !important; }
-            .terrasse-unten-grid > div:first-child { height:auto !important; }
-            .terrasse-unten-grid .slider { height:auto !important; }
-            .terrasse-unten-grid .slider-track { height:auto !important; }
-            .terrasse-unten-grid .slider-slide { height:auto !important; }
-            .terrasse-unten-grid img { width:100% !important; height:100% !important; object-fit:cover !important; }
+            /* ===== TERRASSE UNTEN ===== */
+            .terrasse-unten-grid { grid-template-columns: 1fr !important; gap: 0 !important; }
+            .terrasse-img-wrap {
+                overflow: visible !important;
+                height: auto !important;
+            }
+            .terrasse-img-wrap img {
+                width: 100% !important;
+                height: auto !important;
+                object-fit: unset !important;
+                display: block !important;
+            }
+            /* terrasse slider */
+            #terrasse-track {
+                display: block !important;
+                transform: none !important;
+            }
 
-            /* Slider */
-            .slider-btn { width:38px; height:38px; }
-            .slider-dot { width:8px; height:8px; }
+            /* ===== DACHTERRASSE ===== */
+            .dt-hero { height: auto !important; min-height: unset !important; padding: 0 !important; }
+            .dt-hero .slider-slide img { height: auto !important; object-fit: unset !important; }
 
-            /* Dachterrasse */
-            .dachterrasse-section { padding:3rem 1.2rem; }
-            .dt-hero { height:auto !important; border-radius:1.2rem !important; }
-            .dt-hero .slider { height:auto !important; }
-            .dt-hero .slider-track { height:auto !important; }
-            .dt-hero .slider-slide { height:auto !important; }
-            .dt-hero .slider-slide img { width:100% !important; height:100% !important; object-fit:cover !important; }
-            .dt-features { grid-template-columns:1fr 1fr !important; gap:1rem; }
-            .dt-feature { padding:1.25rem 1rem; }
+            /* ===== LAGE ===== */
+            .lage-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .map-placeholder {
+                height: auto !important;
+                border-radius: 1rem !important;
+                overflow: hidden;
+            }
+            .map-placeholder img {
+                width: 100% !important;
+                height: auto !important;
+                object-fit: unset !important;
+                display: block !important;
+            }
+            .lage-info { padding: 0 0.5rem; }
 
-            /* Outdoor Küche */
-            .outdoor-grid { grid-template-columns:1fr !important; gap:2rem !important; }
-            /* outdoor-slider handled by general .slider rule above */
+            /* ===== AUSSTATTUNG ===== */
+            .ausstattung-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .ausstattung-img {
+                width: 100% !important;
+                height: auto !important;
+                object-fit: unset !important;
+                display: block !important;
+                border-radius: 1rem;
+            }
 
-            /* Energie */
-            .energie-grid { grid-template-columns:1fr 1fr !important; gap:1rem; }
-            .energie-card { padding:1.25rem 1rem; }
+            /* ===== VORTEILE ===== */
+            .vorteile-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .vorteile-box { padding: 1.5rem; border-radius: 1.2rem; }
 
-            /* Lage */
-            .lage-grid { grid-template-columns:1fr !important; gap:2rem !important; }
-            .map-placeholder { height:auto !important; border-radius:1.2rem; }
-            .map-placeholder img { width:100% !important; height:100% !important; object-fit:cover !important; }
-
-            /* Preis */
-            .preis-box { padding:2rem 1.5rem; border-radius:1.5rem; }
-            .preis-value { font-size:2.8rem; }
-            .preis-note { font-size:0.85rem; flex-wrap:wrap; justify-content:center; text-align:center; }
-
-            /* Kontakt */
-            .kontakt-grid { grid-template-columns:1fr !important; gap:2rem !important; }
-            .call-box { padding:2rem 1.5rem; border-radius:1.5rem; }
-            .call-number { font-size:1.5rem; }
-            .btn-call { width:100%; justify-content:center; padding:1rem; font-size:1rem; }
-            .vorteile-box { padding:1.5rem; border-radius:1.2rem; }
-
-            /* Footer */
-            footer { padding:2.5rem 1.2rem; }
-            .footer-phone { font-size:1.2rem; }
+            /* ===== FOOTER ===== */
+            footer { padding: 2.5rem 1.2rem; text-align: center; }
+            .footer-phone { font-size: 1.2rem; }
         }
 
         @media (max-width: 480px) {
-            .hero h1 { font-size:1.75rem; }
-            .hero-stats { flex-direction:column; align-items:center; }
-            .hero-stat { width:100%; max-width:260px; flex:none; }
-            .dt-features { grid-template-columns:1fr !important; }
-            .energie-grid { grid-template-columns:1fr !important; }
-            .badesee-features { grid-template-columns:1fr !important; }
-            .section-title { font-size:1.4rem; }
-            .preis-value { font-size:2.2rem; }
-            section { padding:2.5rem 1rem; }
+            .hero h1 { font-size: 1.35rem !important; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .stat-value { font-size: 1.2rem; }
+            .section-title { font-size: 1.4rem; }
         }
     </style>
 </head>
@@ -760,6 +829,19 @@
 
     lucide.createIcons();
 
+    // Re-init sliders on resize (mobile <-> desktop switch)
+    let lastMobile = isMobileView();
+    window.addEventListener('resize', () => {
+        const nowMobile = isMobileView();
+        if (nowMobile !== lastMobile) {
+            lastMobile = nowMobile;
+            // Re-init all sliders for new view
+            Object.keys(sliders).forEach(name => {
+                slideTo(name, sliders[name].current);
+            });
+        }
+    });
+
     // Hamburger menu
     function toggleMenu() {
         const menu = document.getElementById('mobileMenu');
@@ -802,15 +884,41 @@
                 dotsEl.appendChild(d);
             }
         }
-        autoPlay(name, interval || 4500);
+        // Initialize slide visibility
+        const track = document.getElementById(name + '-track');
+        if (track && isMobileView()) {
+            Array.from(track.children).forEach((slide, i) => {
+                slide.style.display = i === 0 ? 'block' : 'none';
+                if (i === 0) slide.classList.add('mobile-active');
+            });
+        }
+        if (interval && interval > 0) autoPlay(name, interval);
     }
+
+    function isMobileView() { return window.innerWidth <= 768; }
 
     function slideTo(name, idx) {
         const s = sliders[name];
         if (!s) return;
         s.current = (idx + s.count) % s.count;
         const track = document.getElementById(name + '-track');
-        if (track) track.style.transform = 'translateX(-' + (s.current * 100) + '%)';
+        if (!track) return;
+        if (isMobileView()) {
+            // Mobile: show/hide slides - no transform, images at natural size
+            Array.from(track.children).forEach((slide, i) => {
+                if (i === s.current) {
+                    slide.style.display = 'block';
+                    slide.classList.add('mobile-active');
+                } else {
+                    slide.style.display = 'none';
+                    slide.classList.remove('mobile-active');
+                }
+            });
+        } else {
+            // Desktop: transform-based slider
+            Array.from(track.children).forEach(slide => slide.style.display = '');
+            track.style.transform = 'translateX(-' + (s.current * 100) + '%)';
+        }
         const dots = document.querySelectorAll('#' + name + '-dots .slider-dot');
         dots.forEach((d, i) => d.classList.toggle('active', i === s.current));
     }
