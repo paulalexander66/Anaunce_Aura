@@ -367,6 +367,27 @@
                 </div>
             </div>
 
+            <div class="raum-card reveal">
+                <div class="slider raum-slider" data-slider="kueche">
+                    <div class="slider-track" id="kueche-track">
+                        <div class="slider-slide"><img src="images/kueche_1.jpg" alt="K&uuml;che"></div>
+                        <div class="slider-slide"><img src="images/kueche_2.jpg" alt="K&uuml;che 2"></div>
+                        <div class="slider-slide"><img src="images/kueche_3.jpg" alt="K&uuml;che 3"></div>
+                    </div>
+                    <button class="slider-btn prev" onclick="slideMove('kueche',-1)"><i data-lucide="chevron-left"></i></button>
+                    <button class="slider-btn next" onclick="slideMove('kueche',1)"><i data-lucide="chevron-right"></i></button>
+                    <div class="slider-dots" id="kueche-dots"></div>
+                </div>
+                <div class="raum-info">
+                    <h3><i data-lucide="utensils"></i> K&uuml;che</h3>
+                    <p>Hochwertige Einbauk&uuml;che mit K&uuml;ppersbusch, Bosch &amp; Siemens Ger&auml;ten &ndash; komplett ausgestattet und sofort einsatzbereit.</p>
+                    <div class="raum-tags">
+                        <span class="tag"><i data-lucide="chef-hat"></i> Einbauk&uuml;che</span>
+                        <span class="tag"><i data-lucide="zap"></i> Vollausstattung</span>
+                        <span class="tag"><i data-lucide="sparkles"></i> K&uuml;ppersbusch</span>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Terrasse Unten -->
@@ -491,10 +512,8 @@
                 </ul>
             </div>
             <div class="reveal">
-                <div class="map-placeholder">
-                    <i data-lucide="map-pin"></i>
-                    <span>Aura Siedlung</span>
-                    <span style="font-size:0.82rem;opacity:0.7">2333 Leopoldsdorf bei Wien</span>
+                <div class="map-placeholder" style="padding:0;overflow:hidden;">
+                    <img src="images/location.png" alt="Lage Aura Siedlung Leopoldsdorf" style="width:100%;height:100%;object-fit:cover;border-radius:1.5rem;">
                 </div>
             </div>
         </div>
@@ -622,6 +641,8 @@
     // Init all sliders
     window.addEventListener('load', () => {
         initSlider('wohnbereich', 2, 5000);
+        initSlider('kueche', 3, 4800);
+        initSlider('terrasse', 2, 5000);
         initSlider('schlafzimmer', 3, 4500);
         initSlider('bad', 2, 5500);
         initSlider('dachterrasse', 3, 4000);
