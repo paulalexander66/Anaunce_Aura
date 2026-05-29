@@ -261,13 +261,17 @@
 
             /* Badesee */
             .badesee-grid { grid-template-columns:1fr !important; gap:2rem !important; }
-            .badesee-img { height:auto !important; aspect-ratio:16/9 !important; width:100% !important; border-radius:1.2rem; }
+            .badesee-img { width:100% !important; height:auto !important; aspect-ratio:16/9 !important; object-fit:cover !important; border-radius:1.2rem; }
             .badesee-features { grid-template-columns:1fr 1fr !important; }
 
             /* Raeume grid */
             .raume-grid { grid-template-columns:1fr !important; gap:1.5rem; }
             .raum-card { border-radius:1.2rem; }
-            .raum-slider { height:auto !important; aspect-ratio:4/3 !important; }
+            /* Slider height fix: let image determine height */
+            .slider, .raum-slider, .outdoor-slider { height:auto !important; overflow:hidden !important; }
+            .slider-track { height:auto !important; align-items:stretch; }
+            .slider-slide { height:auto !important; }
+            .slider-slide img { width:100% !important; height:auto !important; aspect-ratio:4/3 !important; object-fit:cover !important; object-position:center !important; display:block !important; }
             .raum-body { padding:1.25rem; }
             .raum-title { font-size:1.1rem; }
             .raum-text { font-size:0.88rem; }
@@ -288,11 +292,12 @@
 
             /* Terrasse Unten special grid */
             .terrasse-unten-grid { grid-template-columns:1fr !important; }
-            .terrasse-img-wrap { height:auto !important; aspect-ratio:4/3 !important; }
-            .terrasse-unten-grid > div:first-child { height:auto !important; aspect-ratio:4/3 !important; }
-            .terrasse-unten-grid .slider { height:100% !important; position:absolute !important; inset:0 !important; }
-            .terrasse-img-wrap { position:relative !important; }
-            .terrasse-unten-grid img { width:100% !important; height:100% !important; object-fit:cover !important; object-position:center !important; }
+            .terrasse-img-wrap { height:auto !important; }
+            .terrasse-unten-grid > div:first-child { height:auto !important; }
+            .terrasse-unten-grid .slider { height:auto !important; }
+            .terrasse-unten-grid .slider-track { height:auto !important; }
+            .terrasse-unten-grid .slider-slide { height:auto !important; }
+            .terrasse-unten-grid img { width:100% !important; height:auto !important; aspect-ratio:4/3 !important; object-fit:cover !important; }
 
             /* Slider */
             .slider-btn { width:38px; height:38px; }
@@ -300,13 +305,17 @@
 
             /* Dachterrasse */
             .dachterrasse-section { padding:3rem 1.2rem; }
-            .dt-hero { height:auto !important; aspect-ratio:16/9 !important; border-radius:1.2rem !important; }
+            .dt-hero { height:auto !important; border-radius:1.2rem !important; }
+            .dt-hero .slider { height:auto !important; }
+            .dt-hero .slider-track { height:auto !important; }
+            .dt-hero .slider-slide { height:auto !important; }
+            .dt-hero .slider-slide img { aspect-ratio:16/9 !important; width:100% !important; height:auto !important; object-fit:cover !important; }
             .dt-features { grid-template-columns:1fr 1fr !important; gap:1rem; }
             .dt-feature { padding:1.25rem 1rem; }
 
             /* Outdoor Küche */
             .outdoor-grid { grid-template-columns:1fr !important; gap:2rem !important; }
-            .outdoor-slider { height:auto !important; aspect-ratio:4/3 !important; }
+            /* outdoor-slider handled by general .slider rule above */
 
             /* Energie */
             .energie-grid { grid-template-columns:1fr 1fr !important; gap:1rem; }
