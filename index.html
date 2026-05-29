@@ -261,17 +261,17 @@
 
             /* Badesee */
             .badesee-grid { grid-template-columns:1fr !important; gap:2rem !important; }
-            .badesee-img { width:100% !important; height:auto !important; object-fit:unset !important; border-radius:1.2rem; }
+            .badesee-img { width:100% !important; aspect-ratio:4/3 !important; object-fit:cover !important; border-radius:1.2rem; }
             .badesee-features { grid-template-columns:1fr 1fr !important; }
 
             /* Raeume grid */
             .raume-grid { grid-template-columns:1fr !important; gap:1.5rem; }
             .raum-card { border-radius:1.2rem; }
             /* Slider height fix: let image determine height */
-            .slider, .raum-slider, .outdoor-slider { height:auto !important; overflow:hidden !important; }
-            .slider-track { height:auto !important; align-items:stretch; }
-            .slider-slide { height:auto !important; }
-            .slider-slide img { width:100% !important; height:auto !important; object-fit:unset !important; display:block !important; aspect-ratio:unset !important; }
+            .slider, .raum-slider, .outdoor-slider { aspect-ratio:4/3 !important; height:auto !important; overflow:hidden !important; }
+            .slider-track { height:100% !important; }
+            .slider-slide { height:100% !important; }
+            .slider-slide img { width:100% !important; height:100% !important; object-fit:cover !important; object-position:center !important; display:block !important; }
             .raum-body { padding:1.25rem; }
             .raum-title { font-size:1.1rem; }
             .raum-text { font-size:0.88rem; }
@@ -297,7 +297,7 @@
             .terrasse-unten-grid .slider { height:auto !important; }
             .terrasse-unten-grid .slider-track { height:auto !important; }
             .terrasse-unten-grid .slider-slide { height:auto !important; }
-            .terrasse-unten-grid img { width:100% !important; height:auto !important; object-fit:unset !important; }
+            .terrasse-unten-grid img { width:100% !important; height:100% !important; object-fit:cover !important; }
 
             /* Slider */
             .slider-btn { width:38px; height:38px; }
@@ -309,7 +309,7 @@
             .dt-hero .slider { height:auto !important; }
             .dt-hero .slider-track { height:auto !important; }
             .dt-hero .slider-slide { height:auto !important; }
-            .dt-hero .slider-slide img { width:100% !important; height:auto !important; object-fit:unset !important; }
+            .dt-hero .slider-slide img { width:100% !important; height:100% !important; object-fit:cover !important; }
             .dt-features { grid-template-columns:1fr 1fr !important; gap:1rem; }
             .dt-feature { padding:1.25rem 1rem; }
 
@@ -324,7 +324,7 @@
             /* Lage */
             .lage-grid { grid-template-columns:1fr !important; gap:2rem !important; }
             .map-placeholder { height:auto !important; border-radius:1.2rem; }
-            .map-placeholder img { width:100% !important; height:auto !important; object-fit:unset !important; }
+            .map-placeholder img { width:100% !important; height:100% !important; object-fit:cover !important; }
 
             /* Preis */
             .preis-box { padding:2rem 1.5rem; border-radius:1.5rem; }
@@ -384,7 +384,7 @@
 <section class="hero">
     <div class="hero-img-wrap">
         <div class="hero-img-fallback"></div>
-        <img src="images/hero.jpg" alt="Traumwohnung Leopoldsdorf">
+        <img src="images/hero.jpg" data-mobile="images/hero_mobile.jpg" alt="Traumwohnung Leopoldsdorf">
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -417,7 +417,7 @@
             <div style="position:relative" class="reveal">
                 <div class="slider img-main">
                     <div class="slider-track" id="badesee-track">
-                        <div class="slider-slide"><img src="images/badesee.jpg" alt="Badesee"></div>
+                        <div class="slider-slide"><img src="images/badesee.jpg" data-mobile="images/badesee_mobile.jpg" alt="Badesee"></div>
                     </div>
                 </div>
                 <div class="badge-floating top-right"><div class="bf-value">Exklusiv</div><div class="bf-label">Nur f&uuml;r Bewohner</div></div>
@@ -465,8 +465,8 @@
             <div class="raum-card reveal">
                 <div class="slider raum-slider" data-slider="wohnbereich">
                     <div class="slider-track" id="wohnbereich-track">
-                        <div class="slider-slide"><img src="images/wohnbereich_1.jpg" alt="Wohnbereich"></div>
-                        <div class="slider-slide"><img src="images/wohnbereich_2.jpg" alt="Wohnbereich 2"></div>
+                        <div class="slider-slide"><img src="images/wohnbereich_1.jpg" data-mobile="images/wohnbereich_1_mobile.jpg" alt="Wohnbereich"></div>
+                        <div class="slider-slide"><img src="images/wohnbereich_2.jpg" data-mobile="images/wohnbereich_2_mobile.jpg" alt="Wohnbereich 2"></div>
                     </div>
                     <button class="slider-btn prev" onclick="slideMove('wohnbereich',-1)"><i data-lucide="chevron-left"></i></button>
                     <button class="slider-btn next" onclick="slideMove('wohnbereich',1)"><i data-lucide="chevron-right"></i></button>
@@ -482,9 +482,9 @@
             <div class="raum-card reveal">
                 <div class="slider raum-slider" data-slider="schlafzimmer">
                     <div class="slider-track" id="schlafzimmer-track">
-                        <div class="slider-slide"><img src="images/schlafzimmer_1.jpg" alt="Schlafzimmer 1"></div>
-                        <div class="slider-slide"><img src="images/schlafzimmer_2.jpg" alt="Schlafzimmer Master"></div>
-                        <div class="slider-slide"><img src="images/schlafzimmer_3.jpg" alt="Schlafzimmer 3"></div>
+                        <div class="slider-slide"><img src="images/schlafzimmer_1.jpg" data-mobile="images/schlafzimmer_1_mobile.jpg" alt="Schlafzimmer 1"></div>
+                        <div class="slider-slide"><img src="images/schlafzimmer_2.jpg" data-mobile="images/schlafzimmer_2_mobile.jpg" alt="Schlafzimmer Master"></div>
+                        <div class="slider-slide"><img src="images/schlafzimmer_3.jpg" data-mobile="images/schlafzimmer_3_mobile.jpg" alt="Schlafzimmer 3"></div>
                     </div>
                     <button class="slider-btn prev" onclick="slideMove('schlafzimmer',-1)"><i data-lucide="chevron-left"></i></button>
                     <button class="slider-btn next" onclick="slideMove('schlafzimmer',1)"><i data-lucide="chevron-right"></i></button>
@@ -500,8 +500,8 @@
             <div class="raum-card reveal">
                 <div class="slider raum-slider" data-slider="bad">
                     <div class="slider-track" id="bad-track">
-                        <div class="slider-slide"><img src="images/bad_1.jpg" alt="Badezimmer 1"></div>
-                        <div class="slider-slide"><img src="images/bad_2.jpg" alt="Badezimmer 2"></div>
+                        <div class="slider-slide"><img src="images/bad_1.jpg" data-mobile="images/bad_1_mobile.jpg" alt="Badezimmer 1"></div>
+                        <div class="slider-slide"><img src="images/bad_2.jpg" data-mobile="images/bad_2_mobile.jpg" alt="Badezimmer 2"></div>
                     </div>
                     <button class="slider-btn prev" onclick="slideMove('bad',-1)"><i data-lucide="chevron-left"></i></button>
                     <button class="slider-btn next" onclick="slideMove('bad',1)"><i data-lucide="chevron-right"></i></button>
@@ -517,9 +517,9 @@
             <div class="raum-card reveal">
                 <div class="slider raum-slider" data-slider="kueche">
                     <div class="slider-track" id="kueche-track">
-                        <div class="slider-slide"><img src="images/kueche_1.jpg" alt="K&uuml;che"></div>
-                        <div class="slider-slide"><img src="images/kueche_2.jpg" alt="K&uuml;che 2"></div>
-                        <div class="slider-slide"><img src="images/kueche_3.jpg" alt="K&uuml;che 3"></div>
+                        <div class="slider-slide"><img src="images/kueche_1.jpg" data-mobile="images/kueche_1_mobile.jpg" alt="K&uuml;che"></div>
+                        <div class="slider-slide"><img src="images/kueche_2.jpg" data-mobile="images/kueche_2_mobile.jpg" alt="K&uuml;che 2"></div>
+                        <div class="slider-slide"><img src="images/kueche_3.jpg" data-mobile="images/kueche_3_mobile.jpg" alt="K&uuml;che 3"></div>
                     </div>
                     <button class="slider-btn prev" onclick="slideMove('kueche',-1)"><i data-lucide="chevron-left"></i></button>
                     <button class="slider-btn next" onclick="slideMove('kueche',1)"><i data-lucide="chevron-right"></i></button>
@@ -539,8 +539,8 @@
                 <div class="terrasse-img-wrap">
                     <div class="slider" id="terrasse-slider" style="height:300px;overflow:hidden;">
                         <div class="slider-track" id="terrasse-track">
-                            <div class="slider-slide"><img src="images/terrasse_unten.jpg" alt="Terrasse Eingangsebene"></div>
-                            <div class="slider-slide"><img src="images/terrasse_unten_2.jpg" alt="Terrasseneingang"></div>
+                            <div class="slider-slide"><img src="images/terrasse_unten.jpg" data-mobile="images/terrasse_unten_mobile.jpg" alt="Terrasse Eingangsebene"></div>
+                            <div class="slider-slide"><img src="images/terrasse_unten_2.jpg" data-mobile="images/terrasse_unten_2_mobile.jpg" alt="Terrasseneingang"></div>
                         </div>
                         <button class="slider-btn prev" onclick="slideMove('terrasse', -1)"><i data-lucide="chevron-left"></i></button>
                         <button class="slider-btn next" onclick="slideMove('terrasse', 1)"><i data-lucide="chevron-right"></i></button>
@@ -566,9 +566,9 @@
         <div class="dt-hero reveal">
             <div class="slider" style="height:520px;border-radius:2rem;overflow:hidden;" data-slider="dachterrasse">
                 <div class="slider-track" id="dachterrasse-track">
-                    <div class="slider-slide"><img src="images/dachterrasse_1.jpg" alt="Dachterrasse 1"></div>
-                    <div class="slider-slide"><img src="images/dachterrasse_2.jpg" alt="Dachterrasse 2"></div>
-                    <div class="slider-slide"><img src="images/dachterrasse_3.jpg" alt="Dachterrasse 3"></div>
+                    <div class="slider-slide"><img src="images/dachterrasse_1.jpg" data-mobile="images/dachterrasse_1_mobile.jpg" alt="Dachterrasse 1"></div>
+                    <div class="slider-slide"><img src="images/dachterrasse_2.jpg" data-mobile="images/dachterrasse_2_mobile.jpg" alt="Dachterrasse 2"></div>
+                    <div class="slider-slide"><img src="images/dachterrasse_3.jpg" data-mobile="images/dachterrasse_3_mobile.jpg" alt="Dachterrasse 3"></div>
                 </div>
                 <button class="slider-btn prev" onclick="slideMove('dachterrasse',-1)"><i data-lucide="chevron-left"></i></button>
                 <button class="slider-btn next" onclick="slideMove('dachterrasse',1)"><i data-lucide="chevron-right"></i></button>
@@ -609,9 +609,9 @@
             <div class="reveal">
                 <div class="slider outdoor-slider" data-slider="ausskueche">
                     <div class="slider-track" id="ausskueche-track">
-                        <div class="slider-slide"><img src="images/ausskueche_1.jpg" alt="Outdoorkueche 1"></div>
-                        <div class="slider-slide"><img src="images/ausskueche_2.jpg" alt="Outdoorkueche 2"></div>
-                        <div class="slider-slide"><img src="images/ausskueche_3.jpg" alt="Outdoorkueche 3"></div>
+                        <div class="slider-slide"><img src="images/ausskueche_1.jpg" data-mobile="images/ausskueche_1_mobile.jpg" alt="Outdoorkueche 1"></div>
+                        <div class="slider-slide"><img src="images/ausskueche_2.jpg" data-mobile="images/ausskueche_2_mobile.jpg" alt="Outdoorkueche 2"></div>
+                        <div class="slider-slide"><img src="images/ausskueche_3.jpg" data-mobile="images/ausskueche_3_mobile.jpg" alt="Outdoorkueche 3"></div>
                     </div>
                     <button class="slider-btn prev" onclick="slideMove('ausskueche',-1)"><i data-lucide="chevron-left"></i></button>
                     <button class="slider-btn next" onclick="slideMove('ausskueche',1)"><i data-lucide="chevron-right"></i></button>
@@ -664,7 +664,7 @@
             </div>
             <div class="reveal">
                 <div class="map-placeholder" style="padding:0;overflow:hidden;">
-                    <img src="images/location.png" alt="Lage Aura Siedlung Leopoldsdorf" style="width:100%;height:100%;object-fit:cover;border-radius:1.5rem;">
+                    <img src="images/location.png" data-mobile="images/location_mobile.png" alt="Lage Aura Siedlung Leopoldsdorf" style="width:100%;height:100%;object-fit:cover;border-radius:1.5rem;">
                 </div>
             </div>
         </div>
@@ -745,6 +745,19 @@
 </footer>
 
 <script>
+    // Mobile image swap - load optimized mobile versions on small screens
+    if (window.innerWidth <= 768) {
+        document.querySelectorAll('img[data-mobile]').forEach(img => {
+            img.src = img.getAttribute('data-mobile');
+        });
+    }
+    window.addEventListener('resize', () => {
+        const isMobile = window.innerWidth <= 768;
+        document.querySelectorAll('img[data-mobile]').forEach(img => {
+            img.src = isMobile ? img.getAttribute('data-mobile') : img.getAttribute('src').replace('_mobile','').replace('_mobile','');
+        });
+    });
+
     lucide.createIcons();
 
     // Hamburger menu
