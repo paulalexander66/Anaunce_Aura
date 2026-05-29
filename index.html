@@ -218,6 +218,115 @@
         /* REVEAL */
         .reveal { opacity:0; transform:translateY(24px); transition:opacity 0.6s ease,transform 0.6s ease; }
         .reveal.visible { opacity:1; transform:translateY(0); }
+
+        /* ==========================================
+           RESPONSIVE / MOBILE STYLES
+        ========================================== */
+
+        /* Hamburger */
+        .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; background:none; border:none; }
+        .hamburger span { display:block; width:24px; height:2px; background:white; border-radius:2px; transition:all 0.3s; }
+        .hamburger.open span:nth-child(1) { transform:translateY(7px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity:0; }
+        .hamburger.open span:nth-child(3) { transform:translateY(-7px) rotate(-45deg); }
+        .mobile-menu { display:none; position:fixed; top:64px; left:0; right:0; background:rgba(26,58,74,0.98); backdrop-filter:blur(10px); padding:1.5rem 2rem; z-index:99; flex-direction:column; gap:0; border-top:1px solid rgba(255,255,255,0.1); }
+        .mobile-menu.open { display:flex; }
+        .mobile-menu a { color:rgba(255,255,255,0.9); text-decoration:none; font-size:1rem; font-weight:500; padding:0.85rem 0; border-bottom:1px solid rgba(255,255,255,0.08); display:block; }
+        .mobile-menu a:last-child { border-bottom:none; }
+
+        @media (max-width: 768px) {
+            /* Nav */
+            .hamburger { display:flex; }
+            .nav-badge { display:none !important; }
+            nav { padding:1rem 1.2rem; }
+
+            /* Hero */
+            .hero { min-height:100svh; }
+            .hero-content { padding:5rem 1.2rem 2rem; }
+            .hero h1 { font-size:2rem; }
+            .hero-sub { font-size:0.95rem; margin-bottom:1.5rem; }
+            .hero-stats { gap:0.75rem; margin-bottom:1.5rem; flex-wrap:wrap; }
+            .hero-stat { padding:0.75rem 1.2rem; flex:1; min-width:130px; }
+            .hero-stat-value { font-size:1.4rem; }
+            .hero-cta { flex-direction:column; align-items:center; gap:0.75rem; }
+            .btn-primary, .btn-outline { width:100%; max-width:300px; justify-content:center; padding:0.9rem 1.5rem; }
+            .scroll-down { display:none; }
+
+            /* General sections */
+            section { padding:3rem 1.2rem; }
+            .section-title { font-size:1.75rem; }
+
+            /* Priv banner */
+            .priv-banner { font-size:0.82rem; padding:0.9rem 1rem; flex-wrap:wrap; gap:0.5rem; }
+
+            /* Badesee */
+            .badesee-grid { grid-template-columns:1fr !important; gap:2rem !important; }
+            .badesee-img { height:280px; border-radius:1.2rem; }
+            .badesee-features { grid-template-columns:1fr 1fr !important; }
+
+            /* Raeume grid */
+            .raume-grid { grid-template-columns:1fr !important; gap:1.5rem; }
+            .raum-card { border-radius:1.2rem; }
+            .raum-slider { height:240px !important; }
+            .raum-body { padding:1.25rem; }
+            .raum-title { font-size:1.1rem; }
+            .raum-text { font-size:0.88rem; }
+
+            /* Terrasse Unten special grid */
+            .terrasse-unten-grid { grid-template-columns:1fr !important; }
+            .terrasse-unten-grid > div:first-child { height:280px !important; }
+            .terrasse-unten-grid .slider { height:280px !important; }
+            .terrasse-unten-grid img { width:100% !important; height:280px !important; object-fit:cover !important; object-position:center !important; }
+
+            /* Slider */
+            .slider-btn { width:38px; height:38px; }
+            .slider-dot { width:8px; height:8px; }
+
+            /* Dachterrasse */
+            .dachterrasse-section { padding:3rem 1.2rem; }
+            .dt-features { grid-template-columns:1fr 1fr !important; gap:1rem; }
+            .dt-feature { padding:1.25rem 1rem; }
+
+            /* Outdoor Küche */
+            .outdoor-grid { grid-template-columns:1fr !important; gap:2rem !important; }
+            .outdoor-slider { height:280px !important; }
+
+            /* Energie */
+            .energie-grid { grid-template-columns:1fr 1fr !important; gap:1rem; }
+            .energie-card { padding:1.25rem 1rem; }
+
+            /* Lage */
+            .lage-grid { grid-template-columns:1fr !important; gap:2rem !important; }
+            .map-placeholder { height:240px; border-radius:1.2rem; }
+
+            /* Preis */
+            .preis-box { padding:2rem 1.5rem; border-radius:1.5rem; }
+            .preis-value { font-size:2.8rem; }
+            .preis-note { font-size:0.85rem; flex-wrap:wrap; justify-content:center; text-align:center; }
+
+            /* Kontakt */
+            .kontakt-grid { grid-template-columns:1fr !important; gap:2rem !important; }
+            .call-box { padding:2rem 1.5rem; border-radius:1.5rem; }
+            .call-number { font-size:1.5rem; }
+            .btn-call { width:100%; justify-content:center; padding:1rem; font-size:1rem; }
+            .vorteile-box { padding:1.5rem; border-radius:1.2rem; }
+
+            /* Footer */
+            footer { padding:2.5rem 1.2rem; }
+            .footer-phone { font-size:1.2rem; }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { font-size:1.75rem; }
+            .hero-stats { flex-direction:column; align-items:center; }
+            .hero-stat { width:100%; max-width:260px; flex:none; }
+            .dt-features { grid-template-columns:1fr !important; }
+            .energie-grid { grid-template-columns:1fr !important; }
+            .badesee-features { grid-template-columns:1fr !important; }
+            .section-title { font-size:1.4rem; }
+            .preis-value { font-size:2.2rem; }
+            section { padding:2.5rem 1rem; }
+        }
     </style>
 </head>
 <body>
@@ -399,7 +508,7 @@
 
         <!-- Terrasse Unten -->
         <div style="margin-top:2rem" class="reveal">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;background:var(--bg-light);border-radius:1.5rem;overflow:hidden;border:1px solid var(--border);">
+            <div class="terrasse-unten-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;background:var(--bg-light);border-radius:1.5rem;overflow:hidden;border:1px solid var(--border);">
                 <div style="height:300px;position:relative;">
                     <div class="slider" id="terrasse-slider" style="height:300px;overflow:hidden;">
                         <div class="slider-track" id="terrasse-track">
