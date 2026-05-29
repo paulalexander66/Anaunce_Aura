@@ -378,7 +378,7 @@
                     <button class="slider-btn next" onclick="slideMove('kueche',1)"><i data-lucide="chevron-right"></i></button>
                     <div class="slider-dots" id="kueche-dots"></div>
                 </div>
-                <div class="raum-info">
+                <div class="raum-body">
                     <h3><i data-lucide="utensils"></i> K&uuml;che</h3>
                     <p>Hochwertige Einbauk&uuml;che mit K&uuml;ppersbusch, Bosch &amp; Siemens Ger&auml;ten &ndash; komplett ausgestattet und sofort einsatzbereit.</p>
                     <div class="raum-tags">
@@ -393,8 +393,16 @@
         <!-- Terrasse Unten -->
         <div style="margin-top:2rem" class="reveal">
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;background:var(--bg-light);border-radius:1.5rem;overflow:hidden;border:1px solid var(--border);">
-                <div style="height:300px;overflow:hidden;">
-                    <img src="images/terrasse_unten.jpg" alt="Terrasse Eingangsebene" style="width:100%;height:100%;object-fit:cover;">
+                <div style="height:300px;overflow:hidden;position:relative;">
+                    <div class="slider" id="terrasse-slider" style="height:300px;">
+                        <div class="slider-track" id="terrasse-track">
+                            <div class="slider-slide"><img src="images/terrasse_unten.jpg" alt="Terrasse Eingangsebene"></div>
+                            <div class="slider-slide"><img src="images/terrasse_unten_2.jpg" alt="Terrasseneingang"></div>
+                        </div>
+                        <button class="slider-btn prev" onclick="slideMove('terrasse', -1)"><i data-lucide="chevron-left"></i></button>
+                        <button class="slider-btn next" onclick="slideMove('terrasse', 1)"><i data-lucide="chevron-right"></i></button>
+                        <div class="slider-dots" id="terrasse-dots"></div>
+                    </div>
                 </div>
                 <div style="padding:2rem;">
                     <span class="section-label">Eingangsebene</span>
