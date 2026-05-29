@@ -272,9 +272,24 @@
             .raum-title { font-size:1.1rem; }
             .raum-text { font-size:0.88rem; }
 
+        /* Terrasse image wrapper - desktop */
+        .terrasse-img-wrap { height:300px; position:relative; overflow:hidden; }
+        /* Terrasse Unten Grid - desktop */
+        .terrasse-unten-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            background: var(--bg-light);
+            border-radius: 1.5rem;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
             /* Terrasse Unten special grid */
             .terrasse-unten-grid { grid-template-columns:1fr !important; }
-            .terrasse-unten-grid > div:first-child { height:280px !important; }
+            .terrasse-img-wrap { height:260px; }
+            .terrasse-unten-grid > div:first-child { height:260px !important; }
             .terrasse-unten-grid .slider { height:280px !important; }
             .terrasse-unten-grid img { width:100% !important; height:280px !important; object-fit:cover !important; object-position:center !important; }
 
@@ -508,8 +523,8 @@
 
         <!-- Terrasse Unten -->
         <div style="margin-top:2rem" class="reveal">
-            <div class="terrasse-unten-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;background:var(--bg-light);border-radius:1.5rem;overflow:hidden;border:1px solid var(--border);">
-                <div style="height:300px;position:relative;">
+            <div class="terrasse-unten-grid">
+                <div class="terrasse-img-wrap">
                     <div class="slider" id="terrasse-slider" style="height:300px;overflow:hidden;">
                         <div class="slider-track" id="terrasse-track">
                             <div class="slider-slide"><img src="images/terrasse_unten.jpg" alt="Terrasse Eingangsebene"></div>
